@@ -1,0 +1,121 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --foreground-rgb: 0, 0, 0;
+  --background-start-rgb: 214, 219, 220;
+  --background-end-rgb: 255, 255, 255;
+
+  --btn-overlap: #3f4a3c;
+  --btn-overlap-foreground: #edecda;
+
+  --text-secondary: #18181b;
+  --text-tertiary: #3f3f46;
+  --text-highlight: rgb(218 204 154);
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --foreground-rgb: 255, 255, 255;
+    --background-start-rgb: 0, 0, 0;
+    --background-end-rgb: 0, 0, 0;
+
+    --btn-overlap: #a3af9e;
+    --btn-overlap-foreground: #2f4858;
+
+    --text-secondary: #d4d4d8;
+    --text-tertiary: #a1a1aa;
+    --text-highlight: rgb(218 204 154);
+  }
+}
+
+body {
+  color: rgb(var(--foreground-rgb));
+  background: linear-gradient(
+      to bottom,
+      transparent,
+      rgb(var(--background-end-rgb))
+    )
+    rgb(var(--background-start-rgb));
+  overflow-x: hidden;
+}
+
+@layer utilities {
+  .text-balance {
+    text-wrap: balance;
+  }
+}
+
+::view-transition-old(root) {
+  animation: fade-and-scale-out 0.5s ease-in-out 1 forwards;
+}
+
+::view-transition-new(root) {
+  animation: fade-and-scale-in 1s ease-in-out 1 forwards;
+}
+
+@keyframes fade-and-scale-in {
+  from {
+    opacity: 0;
+    transform: scaleX(0);
+    transform-origin: 100% 50%;
+  }
+
+  to {
+    opacity: 1;
+    transform: scaleX(1);
+    transform-origin: 100% 50%;
+  }
+}
+
+@keyframes fade-and-scale-out {
+  from {
+    opacity: 1;
+    transform: scaleX(1);
+    transform-origin: 100% 50%;
+  }
+
+  to {
+    opacity: 0;
+    transform: scaleX(0);
+    transform-origin: 100% 50%;
+  }
+}
+
+.top_title {
+  text-decoration: none;
+  text-transform: uppercase;
+  color: var(--btn-default-overlap);
+  background-color: var(--btn-default-overlap-foreground);
+  border: 3px solid;
+  padding: 0.25em 0.5em;
+  box-shadow: 1px 1px 0px 0px, 2px 2px 0px 0px, 3px 3px 0px 0px, 4px 4px 0px 0px,
+    5px 5px 0px 0px;
+  position: relative;
+  user-select: none;
+  -webkit-user-select: none;
+  touch-action: manipulation;
+}
+@media (min-width: 768px) {
+  .top_title {
+    padding: 0.25em 0.75em;
+  }
+}
+
+.text-shadow {
+  @apply text-ttertiary;
+}
+
+.text-shadow:hover {
+  @apply text-current font-bold;
+  text-shadow: 0 0 10px #fff, 0 0 20px #fff, 0 0 40px #fff;
+  letter-spacing: 0.125rem;
+  transition: 0.3s;
+}
+
+.text-background:hover {
+  background: wheat;
+
+  transition: 0.3s;
+}
