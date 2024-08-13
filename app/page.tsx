@@ -1,5 +1,7 @@
 "use client";
-import Eraser from "@/components/icons/eraser";
+import Contact from "@/components/contact";
+import Experiences from "@/components/experiences";
+import Projects from "@/components/projects";
 import SelfIntroduction from "@/components/self-introduction";
 import Skills from "@/components/skills";
 import MoveIn from "@/components/utils/move-in";
@@ -12,46 +14,52 @@ export default function Home() {
 
   useEffect(() => {}, []);
   return (
-    <main className="">
+    <main className="pb-6">
       <div className="">
         {/* <AnimatedLink href="/project/2">123</AnimatedLink> */}
         <SelfIntroduction />
-        <div className="relative">
-          <p className="absolute">
-            087hjsdykfj087hjsdykfj087hjsdykfj087hjsdykfj087hjsdykfj087hjsdykfj087hjsdykfj087hjsdykfj087hjsdykfj087hjsdykfj087hjsdykfj087hjsdykfj087hjsdykfj087hjsdykfj087hjsdykfj087hjsdykfj087hjsdykfj087hjsdykfj087hjsdykfj087hjsdykfj087hjsdykfj087hjsdykfj087hjsdykfj087hjsdykfj087hjsdykfj087hjsdykfj087hjsdykfj087hjsdykfj
-          </p>
-          <div className="absolute z-20">
-            <Eraser />
-          </div>
-        </div>
 
-        <VisibleWhenScrollAt
-          Header={() => <MoveIn title={"skills"} />}
-          Content={({ className }) => (
-            <div className={twMerge("", className)}>
-              <Skills />
-            </div>
-          )}
-        />
-        <VisibleWhenScrollAt
-          Header={() => <MoveIn title={"projects"} from="right" />}
-          Content={({ className }) => (
-            <div className={twMerge("", className)}>
-              <Skills />
-            </div>
-          )}
-        />
-        <VisibleWhenScrollAt
-          Header={() => <MoveIn title={"experience"} />}
-          Content={({ className }) => (
-            <p className={twMerge("my-96", className)}>
-              Iwantsfjksluriowetu Iwantsfjksluriowetu <br />
-              Iwantsfjksluriowetu Iwantsfjksluriowetu Iwantsfjksluriowetu <br />
-              Iwantsfjksluriowetu Iwantsfjksluriowetu Iwantsfjksluriowetu <br />
-              Iwantsfjksluriowetu Iwantsfjksluriowetu Iwantsfjksluriowetu
-            </p>
-          )}
-        />
+        {true && (
+          <VisibleWhenScrollAt
+            Header={() => <MoveIn title={"skills"} />}
+            Content={({ isInView }) => (
+              <Skills
+                className={twMerge(
+                  "mb-8",
+                  isInView ? "animate-show-out" : "opacity-0"
+                )}
+              />
+            )}
+          />
+        )}
+        {true && (
+          <VisibleWhenScrollAt
+            Header={() => <MoveIn title={"projects"} from="right" />}
+            Content={({ isInView }) => (
+              <Projects
+                className={twMerge(
+                  "mb-8",
+                  isInView ? "animate-show-out" : "opacity-0"
+                )}
+              />
+            )}
+          />
+        )}
+        {true && (
+          <VisibleWhenScrollAt
+            Header={() => <MoveIn title={"experiences"} from="left" />}
+            Content={({ isInView }) => (
+              <Experiences
+                className={twMerge(
+                  "mb-8",
+                  isInView ? "animate-show-out" : "opacity-0"
+                )}
+              />
+            )}
+          />
+        )}
+
+        <Contact />
       </div>
     </main>
   );

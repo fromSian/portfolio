@@ -9,6 +9,7 @@ const Header = () => {
   const topLineRef = useRef<HTMLDivElement>(null);
   const observeRef = useRef<IntersectionObserver>();
   const [isStickyTop, setStickyTop] = useState(false);
+  const timeRef = useRef<ReturnType<typeof setTimeout>>();
 
   useEffect(() => {
     const options = {
@@ -24,7 +25,17 @@ const Header = () => {
         setStickyTop(true);
       }
     };
-    observeRef.current = new IntersectionObserver(callback, options);
+
+    const debounceCallback = (entries: IntersectionObserverEntry[]) => {
+      if (timeRef.current) {
+        clearTimeout(timeRef.current);
+        timeRef.current = undefined;
+      }
+      timeRef.current = setTimeout(() => {
+        callback(entries);
+      }, 100);
+    };
+    observeRef.current = new IntersectionObserver(debounceCallback, options);
     topLineRef.current && observeRef.current.observe(topLineRef.current);
 
     return () => {

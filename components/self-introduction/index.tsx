@@ -10,7 +10,7 @@ const SelfIntroduction = () => {
         React for front-end, Django for back-end. Three years of experience in
         React development and one year in django. I also have experience in Vue.
         I worked at a geography company called GeoScene (Esri China) for 2 years
-        as a <span className="text-red-100">front-end developer</span>, also
+        as a <span className="text-thighlight">front-end developer</span>, also
         doing some Python development. Now I'm freelancing, I am available for
         both short and long term projects.
       </p>

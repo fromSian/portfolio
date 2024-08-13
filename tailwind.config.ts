@@ -9,10 +9,22 @@ const config: Config = {
   ],
   theme: {
     extend: {
+      boxShadow: {
+        note: "0.2rem 0.2rem 1.2rem rgba(0,0,0,.8)",
+      },
       colors: {
         tsecondary: "var(--text-secondary)",
         ttertiary: "var(--text-tertiary)",
         thighlight: "var(--text-highlight)",
+        "bg-note": "var(--bg-note)",
+        light: {
+          foreground: "var(--light-foreground)",
+          background: "var(--light-background)",
+        },
+        "table-header": {
+          foreground: "var(--table-header-foreground)",
+          background: "var(--table-header-background)",
+        },
       },
       backgroundImage: {
         "gradient-radial": "radial-gradient(var(--tw-gradient-stops))",
@@ -22,20 +34,20 @@ const config: Config = {
       keyframes: {
         swing_end_left: {
           "0%": {
-            transform: "rotate(-2deg) translateX(2%)",
+            transform: "rotate(-2deg) translateX(0%)",
           },
           "50%": { transform: "rotate(2deg) translateX(-2%)" },
           "100%": {
-            transform: "rotate(-2deg) translateX(2%)",
+            transform: "rotate(-2deg) translateX(0%)",
           },
         },
         swing_end_right: {
           "0%": {
-            transform: "rotate(2deg) translateX(-2%)",
+            transform: "rotate(2deg) translateX(0%)",
           },
           "50%": { transform: "rotate(-2deg) translateX(2%)" },
           "100%": {
-            transform: "rotate(2deg) translateX(-2%)",
+            transform: "rotate(2deg) translateX(0%)",
           },
         },
         enter_from_left: {
@@ -50,6 +62,18 @@ const config: Config = {
           "0%": { opacity: "0" },
           "100%": { opacity: "1" },
         },
+        text_out: {
+          "0%": {
+            opacity: "0",
+            transform: "scaleY(0)",
+            transformOrigin: "50% 100%",
+          },
+          "100%": {
+            opacity: "1",
+            transform: "scaleY(1)",
+            transformOrigin: "50% 100%",
+          },
+        },
       },
       animation: {
         "swing-end-for-right": "swing_end_left 2s 2 linear forwards",
@@ -57,6 +81,7 @@ const config: Config = {
         "enter-from-left": "enter_from_left 4s linear both",
         "enter-from-right": "enter_from_right 4s linear both",
         "show-out": "show_out 2s linear both",
+        "text-out": "text_out 0.3s linear both",
       },
     },
   },

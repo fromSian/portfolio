@@ -1,10 +1,16 @@
 import { ReactNode, useEffect, useRef, useState } from "react";
-import { twMerge } from "tailwind-merge";
 interface VisibleWhenScrollAtProps {
-  Header: () => ReactNode;
-  Content: ({ className }) => ReactNode;
+  ratio?: number;
+  Header?: () => ReactNode;
+  Content?: ({ isInView }: { isInView: boolean }) => ReactNode;
+  once?: boolean;
 }
-const VisibleWhenScrollAt = ({ Header, Content }: VisibleWhenScrollAtProps) => {
+const VisibleWhenScrollAt = ({
+  Header,
+  Content,
+  ratio = 0.4,
+  once = true,
+}: VisibleWhenScrollAtProps) => {
   const topLineRef = useRef<HTMLDivElement>(null);
   const observeRef = useRef<IntersectionObserver>();
   const [isInView, setIsInView] = useState(false);
@@ -17,36 +23,50 @@ const VisibleWhenScrollAt = ({ Header, Content }: VisibleWhenScrollAtProps) => {
   };
 
   useEffect(() => {
+    if (!topLineRef.current) return;
+    const rootTargetHeightRatio = +(
+      window.innerHeight / topLineRef.current.clientHeight
+    ).toFixed(6);
+
     const options = {
       root: null,
       rootMargin: "",
-      threshold: 1,
+      threshold:
+        rootTargetHeightRatio > 1 ? ratio : rootTargetHeightRatio * ratio,
     };
+
     const callback = (entries: IntersectionObserverEntry[]) => {
       const [entry] = entries;
 
       if (entry.isIntersecting) {
         setIsInView(true);
-        clearObserver();
+        if (once) {
+          clearObserver();
+        }
+      } else {
+        setIsInView(false);
       }
       initialRatioRef.current = entry.intersectionRatio;
     };
     observeRef.current = new IntersectionObserver(callback, options);
-    topLineRef.current && observeRef.current.observe(topLineRef.current);
+    observeRef.current.observe(topLineRef.current);
 
     return () => {
       clearObserver();
     };
   }, []);
+
   return (
-    <div>
-      <div ref={topLineRef} className="w-full h-1 bg-blue-500 invisible"></div>
+    <div className="flex items-stretch pr-4">
+      <div
+        ref={topLineRef}
+        className="w-4 bg-blue-500 flex-shrink-0 invisible"
+      ></div>
+      <div className="flex-1 relative">
+        {Header && isInView && <Header />}
 
-      {isInView && <Header />}
-
-      <Content
-        className={twMerge(isInView ? "animate-show-out" : "opacity-0")}
-      />
+        {Content && <Content isInView={isInView} />}
+      </div>
     </div>
   );
 };

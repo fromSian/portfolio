@@ -1,6 +1,7 @@
 import Dev from "../icons/dev";
 import Email from "../icons/email";
 import GitHubIcon from "../icons/github";
+import Resume from "../icons/resume";
 
 interface LinksProps {
   isStickyTop: boolean;
@@ -8,6 +9,17 @@ interface LinksProps {
 const Links = ({ isStickyTop }: LinksProps) => {
   return (
     <div className="flex gap-2 items-center">
+      <a
+        data-tooltip-id="my-tooltip"
+        data-tooltip-content="resume document"
+        data-tooltip-place="bottom"
+      >
+        <Resume
+          width={isStickyTop ? 32 : 56}
+          height={isStickyTop ? 32 : 56}
+          className="transition-all cursor-pointer"
+        />
+      </a>
       <a
         data-tooltip-id="my-tooltip"
         data-tooltip-content="email"

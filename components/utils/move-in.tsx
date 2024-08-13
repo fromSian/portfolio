@@ -16,7 +16,7 @@ const MoveIn = ({ title, from = "left" }: MoveInProps) => {
         from === "left"
           ? "animate-enter-from-left"
           : "animate-enter-from-right",
-        "p-4"
+        ""
       )}
     >
       <div
