@@ -2,12 +2,12 @@ function NextIcon() {
   return (
     <svg
       xmlns="http://www.w3.org/2000/svg"
-      width="48"
-      height="48"
       stroke="#000"
       strokeWidth="2.56"
       preserveAspectRatio="xMidYMid"
       viewBox="-51.2 -51.2 614.4 614.4"
+      width={48}
+      height={48}
     >
       <rect
         width="614.4"

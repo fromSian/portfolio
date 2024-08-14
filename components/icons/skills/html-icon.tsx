@@ -2,12 +2,12 @@ function HtmlIcon() {
   return (
     <svg
       xmlns="http://www.w3.org/2000/svg"
-      width="48"
-      height="48"
       fill="#000"
       version="1.1"
       viewBox="-51.2 -51.2 614.4 614.4"
       xmlSpace="preserve"
+      width={48}
+      height={48}
     >
       <rect
         width="614.4"

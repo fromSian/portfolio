@@ -1,0 +1,1 @@
+type ImageStatus = "success" | "fail";

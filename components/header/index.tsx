@@ -14,7 +14,7 @@ const Header = () => {
   useEffect(() => {
     const options = {
       root: null,
-      rootMargin: "4px",
+      rootMargin: "0px",
       threshold: 0.3,
     };
     const callback = (entries: IntersectionObserverEntry[]) => {
@@ -46,17 +46,19 @@ const Header = () => {
   }, []);
   return (
     <>
-      <div className="h-4 w-full invisible" ref={topLineRef}></div>
+      <div className="h-4 invisible" ref={topLineRef}></div>
       <header
         className={twMerge(
-          "z-10 backdrop-filter w-full bg-opacity-20 backdrop-blur-sm sticky top-0 transition-all",
-          "flex justify-between items-center gap-2 py-2",
-          isStickyTop ? "px-4 bg-white" : "px-8"
+          "z-10 backdrop-filter bg-opacity-20 backdrop-blur-sm sticky top-0 transition-all",
+          "flex flex-col sm:flex-row justify-between items-start sm:items-center gap-2 p-2 sm:p-4",
+          isStickyTop ? "bg-white" : ""
         )}
       >
         <NamePosition isStickyTop={isStickyTop} />
-        <Links isStickyTop={isStickyTop} />
+
+        <Links isStickyTop={isStickyTop} className="justify-end w-full" />
       </header>
+
       <Tooltip id="my-tooltip" className="z-20" />
     </>
   );

@@ -1,14 +1,44 @@
 import { useRef, useState } from "react";
-import Dev from "../icons/dev";
-import Email from "../icons/email";
-import GitHubIcon from "../icons/github";
-import LanguageIcon from "../icons/language-icon";
-import Resume from "../icons/resume";
+import { twMerge } from "tailwind-merge";
+import Dev from "../icons/links/dev";
+import Email from "../icons/links/email";
+import GitHubIcon from "../icons/links/github";
+import LanguageIcon from "../icons/links/language-icon";
+import Resume from "../icons/links/resume";
 
+type Cls = {
+  className?: string;
+};
+interface IconWrapProps {
+  isStickyTop: boolean;
+  Icon: React.FC<Cls>;
+  tooltip?: string;
+}
+const IconWrap = ({
+  isStickyTop,
+  Icon,
+  tooltip = "",
+  className = "",
+}: IconWrapProps & Cls) => {
+  return (
+    <div
+      data-tooltip-id="my-tooltip"
+      data-tooltip-content={tooltip}
+      data-tooltip-place="top"
+      className={twMerge(
+        "cursor-pointer transition-all",
+        isStickyTop ? "w-8 sm:w-10" : "w-12 sm:w-16"
+      )}
+    >
+      <Icon className={className} />
+    </div>
+  );
+};
 interface LinksProps {
   isStickyTop: boolean;
+  className?: string;
 }
-const Links = ({ isStickyTop }: LinksProps) => {
+const Links = ({ isStickyTop, className = "" }: LinksProps) => {
   const [lang, setLang] = useState("en");
   const timeRef = useRef<ReturnType<typeof setTimeout>>();
 
@@ -31,63 +61,16 @@ const Links = ({ isStickyTop }: LinksProps) => {
   };
 
   return (
-    <div className="flex gap-2 items-center">
-      <a
-        data-tooltip-id="my-tooltip"
-        data-tooltip-content="resume document"
-        data-tooltip-place="bottom"
-      >
-        <Resume
-          width={isStickyTop ? 32 : 56}
-          height={isStickyTop ? 32 : 56}
-          className="transition-all cursor-pointer"
-        />
-      </a>
-      <a
-        data-tooltip-id="my-tooltip"
-        data-tooltip-content="email"
-        data-tooltip-place="bottom"
-      >
-        <Email
-          width={isStickyTop ? 32 : 56}
-          height={isStickyTop ? 32 : 56}
-          className="transition-all cursor-pointer"
-        />
-      </a>
-      <a
-        data-tooltip-id="my-tooltip"
-        data-tooltip-content="GitHub"
-        data-tooltip-place="bottom"
-      >
-        <GitHubIcon
-          width={isStickyTop ? 36 : 64}
-          height={isStickyTop ? 36 : 64}
-          className="transition-all cursor-pointer"
-        />
-      </a>
-      <a
-        data-tooltip-id="my-tooltip"
-        data-tooltip-content="dev.io community"
-        data-tooltip-place="bottom"
-      >
-        <Dev
-          width={isStickyTop ? 32 : 56}
-          height={isStickyTop ? 32 : 56}
-          className="transition-all cursor-pointer"
-        />
-      </a>
-      <div
-        data-tooltip-id="my-tooltip"
-        data-tooltip-content={lang}
-        data-tooltip-place="bottom"
-        onClick={handleLanguageChange}
-      >
-        <LanguageIcon
-          width={isStickyTop ? 32 : 56}
-          height={isStickyTop ? 32 : 56}
-          className="transition-all cursor-pointer"
-        />
-      </div>
+    <div className={twMerge("flex gap-2 items-center", className)}>
+      <IconWrap isStickyTop={isStickyTop} Icon={Resume} tooltip="resume" />
+      <IconWrap isStickyTop={isStickyTop} Icon={Email} tooltip="email" />
+      <IconWrap isStickyTop={isStickyTop} Icon={GitHubIcon} tooltip="github" />
+      <IconWrap isStickyTop={isStickyTop} Icon={Dev} tooltip="dev" />
+      <IconWrap
+        isStickyTop={isStickyTop}
+        Icon={LanguageIcon}
+        tooltip="language"
+      />
     </div>
   );
 };

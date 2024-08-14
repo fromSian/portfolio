@@ -29,7 +29,9 @@ const MoveIn = ({ title, from = "left" }: MoveInProps) => {
       >
         {from === "right" && <TrainLeft />}
 
-        <div className="text-3xl font-bold top_title">{title}</div>
+        <div className="text-lg sm:text-2xl px-4 sm:px-6 py-2 font-bold top_title">
+          {title}
+        </div>
         {from === "left" && <TrainRight />}
       </div>
     </div>

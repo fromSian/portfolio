@@ -10,7 +10,7 @@ const config: Config = {
   theme: {
     extend: {
       boxShadow: {
-        note: "0.2rem 0.2rem 1.2rem rgba(0,0,0,.8)",
+        note: "0.2rem 0.2rem 1.2rem var(--shadow-color)",
       },
       colors: {
         tsecondary: "var(--text-secondary)",

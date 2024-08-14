@@ -68,7 +68,7 @@ const Eraser = ({ width = 800, height = 300, className = "" }) => {
       className={className}
       strokeLinecap="round"
       strokeLinejoin="round"
-      stroke="#d1d1c5"
+      stroke="#c4c389"
       strokeWidth={Math.round(height / 8)}
       style={{
         filter: "blur(0.8px)",

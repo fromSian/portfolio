@@ -2,10 +2,10 @@ function TypeScriptIcon() {
   return (
     <svg
       xmlns="http://www.w3.org/2000/svg"
-      width="48"
-      height="48"
       fill="none"
       viewBox="-1.6 -1.6 19.2 19.2"
+      width={48}
+      height={48}
     >
       <rect
         width="19.2"

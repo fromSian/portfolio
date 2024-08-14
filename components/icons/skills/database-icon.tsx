@@ -4,10 +4,10 @@ function Database() {
   return (
     <svg
       xmlns="http://www.w3.org/2000/svg"
-      width="48"
-      height="48"
       fill="none"
       viewBox="-2.4 -2.4 28.8 28.8"
+      width={48}
+      height={48}
     >
       <rect
         width="28.8"

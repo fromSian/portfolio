@@ -1,42 +1,38 @@
-import Database from "@/components/icons/database";
-import Django from "@/components/icons/django";
-import HtmlIcon from "@/components/icons/html-icon";
-import MoreIcon from "@/components/icons/more";
-import NextIcon from "@/components/icons/next-icon";
-import ReactIcon from "@/components/icons/react";
-import TailwindIcon from "@/components/icons/tailwind-icon";
-import TypeScriptIcon from "@/components/icons/typescript-icon";
+import { Dispatch, SetStateAction } from "react";
+import { twMerge } from "tailwind-merge";
 
-const items = [
-  "react",
-  "django",
-  "typescript",
-  "database",
-  "next",
-  "tailwindcss",
-  "html",
-  "more",
-];
-const Icons = {
-  react: ReactIcon,
-  django: Django,
-  typescript: TypeScriptIcon,
-  database: Database,
-  next: NextIcon,
-  tailwindcss: TailwindIcon,
-  html: HtmlIcon,
-  more: MoreIcon,
-};
+interface ListProps {
+  data: SkillItem[];
+  handleClick: (item: SkillItem) => void;
+  activeKey: string;
+  setActiveKey: Dispatch<SetStateAction<string>>;
+}
 
-const List = () => {
+const List = ({ data, handleClick, activeKey, setActiveKey }: ListProps) => {
   return (
-    <div className="flex gap-4 flex-col h-full justify-center">
-      {Object.keys(Icons).map((key) => {
-        const Icon = Icons[key];
+    <div className="flex gap-4 flex-col h-full justify-center flex-1">
+      {data.map((item) => {
         return (
-          <div className="flex gap-4 items-center">
-            <Icon />
-            <p>{key}</p>
+          <div
+            className="group flex gap-4 cursor-pointer items-start"
+            onClick={() => handleClick(item)}
+          >
+            <div className="flex-shrink-0 group-hover:shadow-note group-active:scale-90 transition-all">
+              <item.Icon />
+            </div>
+            <div>
+              <p
+                className={twMerge(
+                  "text-lg font-bold",
+                  activeKey === item.key && "text-thighlight"
+                )}
+              >
+                {item.title}
+              </p>
+              <p className="block sm:hidden italic text-ttertiary">
+                {item.description}
+              </p>
+            </div>
           </div>
         );
       })}

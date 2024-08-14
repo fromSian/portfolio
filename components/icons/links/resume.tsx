@@ -4,8 +4,6 @@ function Resume({ width = 64, height = 64, className = "" }) {
   return (
     <svg
       xmlns="http://www.w3.org/2000/svg"
-      width={width}
-      height={height}
       fill="#000"
       version="1.1"
       viewBox="-66.73 -66.73 525.99 525.99"

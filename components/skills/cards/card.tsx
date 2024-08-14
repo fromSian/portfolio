@@ -1,48 +1,39 @@
 import Number from "@/components/icons/number";
 import { twMerge } from "tailwind-merge";
 interface CardProps {
-  content: string;
+  item: SkillItem;
   isEraser: boolean;
-  page: number;
   total: number;
   className?: string;
 }
 
-const Card = ({
-  content,
-  isEraser,
-  page,
-  total,
-  className = "",
-}: CardProps) => {
+const Card = ({ item, isEraser, total, className = "" }: CardProps) => {
   return (
     <div
       className={twMerge(
-        "w-96 p-4 bg-bg-note shadow-note backdrop-filter backdrop-blur-sm bg-opacity-50 rounded-sm transition-all",
+        "w-full p-4 bg-bg-note shadow-note backdrop-filter backdrop-blur-sm bg-opacity-50 rounded-sm transition-all",
         className
       )}
     >
-      <h3
-        className={twMerge(
-          "text-center text-2xl italic font-bold px-8 truncate mb-4",
-          !isEraser && "animate-text-out"
-        )}
-      >
-        title This is the most thing
-      </h3>
-
       <p
         className={twMerge(
-          "break-words text-ttertiary",
+          "text-center text-2xl italic font-bold truncate mb-4 break-all text-wrap",
           !isEraser && "animate-text-out"
         )}
       >
-        {content}
+        {item.title}
       </p>
-
+      <p
+        className={twMerge(
+          "text-ttertiary break-all text-wrap",
+          !isEraser && "animate-text-out"
+        )}
+      >
+        {item.description}
+      </p>
       <div className="flex justify-end gap-2 items-center mt-4">
         <span className={twMerge(!isEraser && "animate-text-out")}>
-          <Number index={page} width={16} height={16} />
+          <Number index={item.index + 1} width={16} height={16} />
         </span>
 
         <span className="text-ttertiary">/</span>

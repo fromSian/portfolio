@@ -1,9 +1,7 @@
-function GitHubIcon({ width = 64, height = 64, className = "" }) {
+function GitHubIcon({ className = "" }) {
   return (
     <svg
       xmlns="http://www.w3.org/2000/svg"
-      width={width}
-      height={height}
       viewBox="0 0 512 512"
       className={className}
     >

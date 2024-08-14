@@ -1,9 +1,7 @@
-function Dev({ width = 64, height = 64, className = "" }) {
+function Dev({ className = "" }) {
   return (
     <svg
       xmlns="http://www.w3.org/2000/svg"
-      width={width}
-      height={height}
       className={className}
       fill="#00000000"
       stroke="#00000000"

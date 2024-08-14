@@ -19,7 +19,7 @@ export default function Home() {
     <main className="pb-6">
       <div className="">
         {/* <AnimatedLink href="/project/2">123</AnimatedLink> */}
-        <SelfIntroduction />
+        {true && <SelfIntroduction />}
 
         {true && (
           <VisibleWhenScrollAt
@@ -62,7 +62,7 @@ export default function Home() {
           />
         )}
 
-        <Contact />
+        {true && <Contact />}
       </div>
     </main>
   );

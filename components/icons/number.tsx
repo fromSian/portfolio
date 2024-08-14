@@ -1,3 +1,5 @@
+import { twMerge } from "tailwind-merge";
+
 const number_dict = [
   <path d="M189.4 52.353C174.992 28.57 153.76 16 128 16S81.008 28.57 66.6 52.353C54.605 72.149 48 99.014 48 128c0 28.983 6.605 55.848 18.6 75.646C81.008 227.429 102.24 240 128 240s46.992-12.571 61.4-36.354C201.395 183.848 208 156.983 208 128c0-28.986-6.605-55.851-18.6-75.647zM128 224c-44.21 0-64-48.216-64-96s19.79-96 64-96 64 48.216 64 96-19.79 96-64 96z"></path>,
   <path d="M140 32v192a8.004 8.004 0 01-16.009 0V46.95L88.446 70.643a8.002 8.002 0 11-8.882-13.313l47.99-31.986A8.005 8.005 0 01140 32z"></path>,
@@ -11,21 +13,14 @@ const number_dict = [
   <path d="M128 24a64 64 0 1019.385 124.991l-42.496 70.896a8 8 0 1013.722 8.226l64.077-106.9.086-.143.577-.962c.104-.175.194-.354.284-.533A63.952 63.952 0 00128 24zm41.181 88.628l-.228.38a48.7 48.7 0 11.228-.38z"></path>,
 ];
 
-function Number({
-  index = 0,
-  width = 32,
-  height = 32,
-  color = "#fff",
-  className = "",
-}) {
+function Number({ index = 0, width = 32, height = 32, className = "" }) {
   return (
     <svg
       xmlns="http://www.w3.org/2000/svg"
       width={width}
       height={height}
-      fill={color}
       viewBox="0 0 256 256"
-      className={className}
+      className={twMerge(className, "fill-ttertiary")}
     >
       {number_dict[index]}
     </svg>

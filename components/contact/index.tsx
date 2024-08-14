@@ -13,7 +13,7 @@ const Contact = () => {
       </button>
       <Links isStickyTop={true} />
       <div
-        className="absolute right-4 -bottom-4 cursor-pointer"
+        className="absolute right-4 -bottom-4 cursor-pointer w-8 sm:w-12"
         data-tooltip-id="my-tooltip"
         data-tooltip-content="go top"
         data-tooltip-place="bottom"

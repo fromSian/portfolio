@@ -1,6 +1,6 @@
 const SelfIntroduction = () => {
   return (
-    <div className="flex gap-8 my-4 mx-8 text-lg">
+    <div className="flex gap-2 sm:gap-4 p-2 sm:p-4 text-lg flex-col sm:flex-row items-center sm:items-start">
       <p className="text-3xl font-bold italic text-ttertiary">
         Full Stack developer
       </p>

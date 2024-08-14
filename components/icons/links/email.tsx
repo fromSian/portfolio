@@ -1,4 +1,4 @@
-function Email({ width = 64, height = 64, className = "" }) {
+function Email({ className = "" }) {
   return (
     <svg
       xmlns="http://www.w3.org/2000/svg"
@@ -6,8 +6,6 @@ function Email({ width = 64, height = 64, className = "" }) {
       version="1.1"
       viewBox="-50 -50 600 600"
       xmlSpace="preserve"
-      width={width}
-      height={height}
       className={className}
     >
       <rect

@@ -60,9 +60,9 @@ const VisibleWhenScrollAt = ({
     <div className="flex items-stretch pr-4">
       <div
         ref={topLineRef}
-        className="w-4 bg-blue-500 flex-shrink-0 invisible"
+        className="w-2 sm:w-4 bg-blue-500 flex-shrink-0 invisible"
       ></div>
-      <div className="flex-1 relative">
+      <div className="flex-auto relative">
         {Header && isInView && <Header />}
 
         {Content && <Content isInView={isInView} />}
