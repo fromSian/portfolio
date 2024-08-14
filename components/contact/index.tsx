@@ -7,7 +7,7 @@ const Contact = () => {
   };
 
   return (
-    <div className="flex flex-col items-center gap-4 relative">
+    <div className="px-4 flex flex-col items-center gap-4 relative">
       <button className="py-2 px-12 button-line transition-all tracking-wider">
         please contact me
       </button>

@@ -12,7 +12,9 @@ import { twMerge } from "tailwind-merge";
 export default function Home() {
   const [go, setGo] = useState("");
 
-  useEffect(() => {}, []);
+  useEffect(() => {
+    console.log(navigator.language);
+  }, []);
   return (
     <main className="pb-6">
       <div className="">
@@ -35,6 +37,7 @@ export default function Home() {
         {true && (
           <VisibleWhenScrollAt
             Header={() => <MoveIn title={"projects"} from="right" />}
+            ratio={0.4}
             Content={({ isInView }) => (
               <Projects
                 className={twMerge(

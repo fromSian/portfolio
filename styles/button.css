@@ -1,7 +1,7 @@
 /* CSS */
 .button-line {
   outline: 0;
-  border: 1px solid black;
+  border: 1px solid;
   cursor: pointer;
   position: relative;
   background-color: rgba(0, 0, 0, 0);

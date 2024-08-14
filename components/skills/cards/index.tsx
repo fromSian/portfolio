@@ -15,7 +15,6 @@ const Cards = () => {
   const [isEraser, setIsEraser] = useState(false);
 
   useEffect(() => {
-    console.log(parentRef.current?.clientHeight);
     if (parentRef.current?.clientHeight) {
       setHeight(parentRef.current?.clientHeight);
     }
