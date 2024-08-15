@@ -49,9 +49,9 @@ const Header = () => {
       <div className="h-4 invisible" ref={topLineRef}></div>
       <header
         className={twMerge(
-          "z-10 backdrop-filter bg-opacity-20 backdrop-blur-sm sticky top-0 transition-all",
+          "z-10 backdrop-filter backdrop-blur-sm sticky top-0 transition-all",
           "flex flex-col sm:flex-row justify-between items-start sm:items-center gap-2 p-2 sm:p-4",
-          isStickyTop ? "bg-white" : ""
+          isStickyTop ? "bg-header-background" : ""
         )}
       >
         <NamePosition isStickyTop={isStickyTop} />

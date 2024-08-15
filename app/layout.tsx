@@ -1,7 +1,10 @@
 import Header from "@/components/header";
+import ScrollTop from "@/components/utils/scroll-top";
 import type { Metadata } from "next";
 import { Inter } from "next/font/google";
+import { twMerge } from "tailwind-merge";
 import "./globals.css";
+import "./i18n";
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -17,9 +20,10 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body className={inter.className}>
+      <body className={twMerge(inter.className, "pb-4")}>
         <Header />
         {children}
+        <ScrollTop />
       </body>
     </html>
   );

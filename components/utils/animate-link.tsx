@@ -6,11 +6,17 @@ import React from "react";
 type Props = {
   href: string;
   children: React.ReactNode;
+  className?: string;
 };
-export default function AnimatedLink({ href, children }: Props) {
+export default function AnimatedLink({
+  href,
+  children,
+  className = "",
+}: Props) {
   const { animatedRoute } = useAnimatedRouter();
   return (
     <Link
+      className={className}
       href={href}
       onClick={() => {
         animatedRoute(href);

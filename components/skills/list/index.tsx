@@ -14,7 +14,7 @@ const List = ({ data, handleClick, activeKey, setActiveKey }: ListProps) => {
       {data.map((item) => {
         return (
           <div
-            className="group flex gap-4 cursor-pointer items-start"
+            className="group flex gap-4 cursor-pointer items-start pointer-events-none sm:pointer-events-auto"
             onClick={() => handleClick(item)}
           >
             <div className="flex-shrink-0 group-hover:shadow-note group-active:scale-90 transition-all">
@@ -24,7 +24,7 @@ const List = ({ data, handleClick, activeKey, setActiveKey }: ListProps) => {
               <p
                 className={twMerge(
                   "text-lg font-bold",
-                  activeKey === item.key && "text-thighlight"
+                  activeKey === item.key && "sm:text-thighlight"
                 )}
               >
                 {item.title}

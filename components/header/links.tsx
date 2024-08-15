@@ -37,8 +37,13 @@ const IconWrap = ({
 interface LinksProps {
   isStickyTop: boolean;
   className?: string;
+  isBottom?: boolean;
 }
-const Links = ({ isStickyTop, className = "" }: LinksProps) => {
+const Links = ({
+  isStickyTop,
+  isBottom = false,
+  className = "",
+}: LinksProps) => {
   const [lang, setLang] = useState("en");
   const timeRef = useRef<ReturnType<typeof setTimeout>>();
 
@@ -66,11 +71,13 @@ const Links = ({ isStickyTop, className = "" }: LinksProps) => {
       <IconWrap isStickyTop={isStickyTop} Icon={Email} tooltip="email" />
       <IconWrap isStickyTop={isStickyTop} Icon={GitHubIcon} tooltip="github" />
       <IconWrap isStickyTop={isStickyTop} Icon={Dev} tooltip="dev" />
-      <IconWrap
-        isStickyTop={isStickyTop}
-        Icon={LanguageIcon}
-        tooltip="language"
-      />
+      {!isBottom && (
+        <IconWrap
+          isStickyTop={isStickyTop}
+          Icon={LanguageIcon}
+          tooltip="language"
+        />
+      )}
     </div>
   );
 };

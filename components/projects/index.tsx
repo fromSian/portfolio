@@ -1,7 +1,8 @@
 import { useState } from "react";
 import { twMerge } from "tailwind-merge";
-import RightArrow from "../icons/right-arrow";
+import RightArrow from "../icons/arrow-right";
 import Role from "../icons/role";
+import AnimatedLink from "../utils/animate-link";
 import BeautyImage from "../utils/image";
 const ItemWithPicture = () => {
   const [imageLoaded, setImageLoaded] = useState<ImageStatus>("success");
@@ -33,13 +34,23 @@ const InfoInPicture = () => {
           <Role />
           front developer backdeveloper design
         </div>
-        <RightArrow className="cursor-pointer right-arrow hidden" />
+        <AnimatedLink
+          className="cursor-pointer right-arrow hidden sm:block"
+          href={"/projects/123"}
+        >
+          <RightArrow className="cursor-pointer" />
+        </AnimatedLink>
       </div>
       <p className="break-all text-ttertiary">
         description
         descriptiondescriptiondescriptiondescriptiondescriptiondescriptiondescriptiondescriptiondescriptiondescriptiondescriptiondescriptiondescriptiondescriptiondescriptiondescriptiondescriptiondescriptiondescriptiondescriptiondescriptiondescriptiondescriptiondescription
       </p>
-      <RightArrow className="cursor-pointer right-arrow sm:block" />
+      <AnimatedLink
+        className="cursor-pointer right-arrow block sm:hidden"
+        href={"/projects/123"}
+      >
+        <RightArrow className="cursor-pointer" />
+      </AnimatedLink>
     </div>
   );
 };

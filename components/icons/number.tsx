@@ -20,7 +20,7 @@ function Number({ index = 0, width = 32, height = 32, className = "" }) {
       width={width}
       height={height}
       viewBox="0 0 256 256"
-      className={twMerge(className, "fill-ttertiary")}
+      className={twMerge("fill-ttertiary", className)}
     >
       {number_dict[index]}
     </svg>

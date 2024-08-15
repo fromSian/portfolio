@@ -25,6 +25,8 @@ const config: Config = {
           foreground: "var(--table-header-foreground)",
           background: "var(--table-header-background)",
         },
+        "header-background": "var(--header-background)",
+        "catalog-border": "var(--catalog-border)",
       },
       backgroundImage: {
         "gradient-radial": "radial-gradient(var(--tw-gradient-stops))",

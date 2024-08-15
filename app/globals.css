@@ -25,6 +25,11 @@
   --table-header-foreground: var(rgb(--foreground-rgb));
 
   --shadow-color: rgba(0, 0, 0, 0.8);
+  --header-background: rgba(255, 255, 255, 0.2);
+
+  --catalog-border: #525757;
+
+  --divider-border: #3e4247cc;
 }
 
 @media (prefers-color-scheme: dark) {
@@ -48,6 +53,11 @@
     --table-header-foreground: var(rgb(--foreground-rgb));
 
     --shadow-color: rgb(100 103 105);
+    --header-background: rgba(0, 0, 0, 0.2);
+
+    --catalog-border: #525757;
+
+    --divider-border: #3e4247cc;
   }
 }
 
@@ -62,14 +72,19 @@ body {
   .text-balance {
     text-wrap: balance;
   }
+
+  .divider {
+    @apply border-b-2 w-full;
+    border-color: var(--divider-border);
+  }
 }
 
 ::view-transition-old(root) {
-  animation: fade-and-scale-out 0.5s ease-in-out 1 forwards;
+  animation: fade-and-scale-out 0.6s ease-in-out 1 forwards;
 }
 
 ::view-transition-new(root) {
-  animation: fade-and-scale-in 1s ease-in-out 1 forwards;
+  animation: fade-and-scale-in 1.2s ease-in-out 1 forwards;
 }
 
 @keyframes fade-and-scale-in {
