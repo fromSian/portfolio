@@ -27,6 +27,10 @@ const config: Config = {
         },
         "header-background": "var(--header-background)",
         "catalog-border": "var(--catalog-border)",
+        "image-dot": {
+          default: "var(--image-dot)",
+          active: "var(--image-dot-active)",
+        },
       },
       backgroundImage: {
         "gradient-radial": "radial-gradient(var(--tw-gradient-stops))",

@@ -20,12 +20,10 @@ const BeautyImage = ({
    * onLoad event
    */
   const onImageLoad = () => {
-    console.log("success");
     setImageLoaded("success");
   };
 
   const onError = () => {
-    console.log("fail");
     setImageLoaded("fail");
   };
 

@@ -142,7 +142,7 @@ const More = () => {
         {styleInfos.map((info, index) => {
           const { top, left, bottom, right, width, height, ...rest } = info;
           return (
-            <AnimatedLink href="/projects/2312">
+            <AnimatedLink href="/projects/2312" key={`catalog-random-${index}`}>
               <div
                 onMouseOver={(e) => {
                   e.stopPropagation();
@@ -172,8 +172,8 @@ const More = () => {
       </div>
 
       <div className="md:hidden border-4 w-full last:border-b-0 border-black">
-        {styleInfos.map((item) => (
-          <AnimatedLink href="/projects/123">
+        {styleInfos.map((item, index) => (
+          <AnimatedLink href="/projects/123" key={`catalog-rect-${index}`}>
             <div className="p-4 cursor-pointer border-b-4 border-black">
               be markdownnotes markdownnotesmarkdownnotes
             </div>

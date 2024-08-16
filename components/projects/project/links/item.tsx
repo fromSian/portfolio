@@ -2,7 +2,7 @@ import ArrowUp from "@/components/icons/arrow-up";
 
 const LinkItem = ({ name, url }) => {
   return (
-    <div className="bg-black py-2 px-4 relative overflow-hidden rounded-md flex justify-between items-center">
+    <div className="bg-table-header-background py-2 px-4 relative overflow-hidden rounded-md flex justify-between items-center">
       <div
         className="absolute w-1 h-full top-0 left-0 gap-2 sm:gap-4"
         style={{

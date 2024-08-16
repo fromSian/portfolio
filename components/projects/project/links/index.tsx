@@ -19,8 +19,8 @@ const Links = () => {
   return (
     <div className="flex flex-col gap-4 flex-1">
       <p className="uppercase mb-2 text-ttertiary text-lg">links</p>
-      {links.map((link) => (
-        <LinkItem {...link} />
+      {links.map((link, index) => (
+        <LinkItem {...link} key={`link-${index}`} />
       ))}
     </div>
   );

@@ -12,7 +12,11 @@ const Responsibility = () => {
       <div className="flex flex-col gap-4 flex-1">
         <p className="uppercase mb-2  text-ttertiary text-lg">responsibility</p>
         {data.map((item, index) => (
-          <ResponsibilityItem index={index} content={item} />
+          <ResponsibilityItem
+            index={index}
+            content={item}
+            key={`responsibility-${index}`}
+          />
         ))}
       </div>
     </>

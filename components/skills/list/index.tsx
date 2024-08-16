@@ -11,9 +11,10 @@ interface ListProps {
 const List = ({ data, handleClick, activeKey, setActiveKey }: ListProps) => {
   return (
     <div className="flex gap-4 flex-col h-full justify-center flex-1">
-      {data.map((item) => {
+      {data.map((item, index) => {
         return (
           <div
+            key={`skills-${index}`}
             className="group flex gap-4 cursor-pointer items-start pointer-events-none sm:pointer-events-auto"
             onClick={() => handleClick(item)}
           >

@@ -30,35 +30,41 @@
   --catalog-border: #525757;
 
   --divider-border: #3e4247cc;
+
+  --image-dot: #a8a6b8;
+  --image-dot-active: #5c5f63;
 }
 
+.dark {
+  --foreground-rgb: 255, 255, 255;
+  --background-rgb: 18, 18, 18;
+
+  --btn-overlap: #a3af9e;
+  --btn-overlap-foreground: #2f4858;
+
+  --text-secondary: #d4d4d8;
+  --text-tertiary: #a1a1aa;
+  --text-highlight: rgb(86 163 212);
+  --light-background: #d6e5e5;
+  --light-foreground: #283d5b;
+
+  --table-default: #50515266;
+  --bg-note: #4e5151;
+
+  --table-header-background: #4b4d4e;
+  --table-header-foreground: var(rgb(--foreground-rgb));
+
+  --shadow-color: rgb(100 103 105);
+  --header-background: rgba(0, 0, 0, 0.2);
+
+  --catalog-border: #525757;
+
+  --divider-border: #3e4247cc;
+
+  --image-dot: #5e6062;
+  --image-dot-active: #b1bdbf;
+}
 @media (prefers-color-scheme: dark) {
-  :root {
-    --foreground-rgb: 255, 255, 255;
-    --background-rgb: 18, 18, 18;
-
-    --btn-overlap: #a3af9e;
-    --btn-overlap-foreground: #2f4858;
-
-    --text-secondary: #d4d4d8;
-    --text-tertiary: #a1a1aa;
-    --text-highlight: rgb(86 163 212);
-    --light-background: #d6e5e5;
-    --light-foreground: #283d5b;
-
-    --table-default: #50515266;
-    --bg-note: #4e5151;
-
-    --table-header-background: #4b4d4e;
-    --table-header-foreground: var(rgb(--foreground-rgb));
-
-    --shadow-color: rgb(100 103 105);
-    --header-background: rgba(0, 0, 0, 0.2);
-
-    --catalog-border: #525757;
-
-    --divider-border: #3e4247cc;
-  }
 }
 
 body {
@@ -84,7 +90,7 @@ body {
 }
 
 ::view-transition-new(root) {
-  animation: fade-and-scale-in 1.2s ease-in-out 1 forwards;
+  animation: fade-and-scale-in 1.5s ease-in-out 1 forwards;
 }
 
 @keyframes fade-and-scale-in {

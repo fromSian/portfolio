@@ -48,7 +48,6 @@ const Skills = ({ className = "" }: SkillProps) => {
       );
       setData(_data);
       setActiveKey(_data[0].key);
-      console.log(_data[0]);
       cardsRef.current?.setInitialData(_data[0]);
     };
     getIconComponents();

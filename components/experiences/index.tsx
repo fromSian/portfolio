@@ -15,6 +15,7 @@ const Experiences = ({ className = "" }: ProjectsProps) => {
     <div className={twMerge("flex flex-col gap-6", className)}>
       {data.map((item, index) => (
         <ul
+          key={`experiences-${index}`}
           className={twMerge(
             "flex py-2 px-4 rounded-md items-center justify-between",
             index === 0
@@ -23,7 +24,10 @@ const Experiences = ({ className = "" }: ProjectsProps) => {
           )}
         >
           {item.map((v, i) => (
-            <li className="w-[25%] text-center break-word text-wrap whitespace-normal wrap overflow-hidden">
+            <li
+              key={`experience-${index}-${i}`}
+              className="w-[25%] text-center break-word text-wrap whitespace-normal wrap overflow-hidden"
+            >
               {v}
             </li>
           ))}

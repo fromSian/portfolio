@@ -131,7 +131,7 @@ const Media = ({ direction }) => {
               <div
                 onMouseOver={onMouseOver}
                 onMouseLeave={onMouseLeave}
-                key={`item${index}`}
+                key={`media-${index}`}
                 className="min-h-48"
                 style={{
                   width: width,
@@ -144,9 +144,10 @@ const Media = ({ direction }) => {
           <div className="flex gap-2 justify-center my-2">
             {data.slice(1, data.length - 1).map((item, index) => (
               <div
+                key={`media-dot-${index}`}
                 className={twMerge(
-                  "w-3 h-3 rounded-full bg-ttertiary hover:bg-current transition-all cursor-pointer",
-                  currentIndex === item.index && "bg-current"
+                  "w-3 h-3 rounded-full bg-image-dot-default hover:bg-image-dot-active transition-all cursor-pointer",
+                  currentIndex === item.index && "bg-image-dot-active"
                 )}
                 onClick={() => {
                   if (index === 1) {
