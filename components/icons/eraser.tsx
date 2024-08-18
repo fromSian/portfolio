@@ -24,7 +24,16 @@ const percentPointsShort = [
 
 const Eraser = ({ width = 800, height = 300, className = "" }) => {
   const percentPoints = useMemo(
-    () => (height > 500 ? percentPointsTall : percentPointsShort),
+    () =>
+      height > 500
+        ? percentPointsTall.map((p) => ({
+            x: p.x + Math.random() * 3 - 1,
+            y: p.y + Math.random() * 3 - 1,
+          }))
+        : percentPointsShort.map((p) => ({
+            x: p.x + Math.random() * 3 - 1,
+            y: p.y + Math.random() * 3 - 1,
+          })),
     [height]
   );
   const pathsRef = useRef<SVGPathElement[]>([]);

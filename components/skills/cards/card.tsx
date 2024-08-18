@@ -1,4 +1,6 @@
 import Number from "@/components/icons/number";
+import { sanitize } from "dompurify";
+import { useTranslation } from "react-i18next";
 import { twMerge } from "tailwind-merge";
 interface CardProps {
   item: SkillItem;
@@ -8,6 +10,7 @@ interface CardProps {
 }
 
 const Card = ({ item, isEraser, total, className = "" }: CardProps) => {
+  const { t } = useTranslation();
   return (
     <div
       className={twMerge(
@@ -17,20 +20,21 @@ const Card = ({ item, isEraser, total, className = "" }: CardProps) => {
     >
       <p
         className={twMerge(
-          "text-center text-2xl italic font-bold truncate mb-4 break-all text-wrap",
+          "text-center text-2xl truncate mb-4 break-all text-wrap",
           !isEraser && "animate-text-out"
         )}
       >
-        {item.title}
+        {t(`skills.${item.key}.title`)}
       </p>
-      <p
+      <div
         className={twMerge(
-          "text-ttertiary break-all text-wrap",
+          "text-tsecondary break-all text-wrap flex flex-col gap-2 content",
           !isEraser && "animate-text-out"
         )}
-      >
-        {item.description}
-      </p>
+        dangerouslySetInnerHTML={{
+          __html: sanitize(t(`skills.${item.key}.detail`)),
+        }}
+      ></div>
       <div className="flex justify-end gap-2 items-center mt-4">
         <span className={twMerge(!isEraser && "animate-text-out")}>
           <Number index={item.index + 1} width={16} height={16} />

@@ -5,23 +5,18 @@ import SelfIntroduction from "@/components/self-introduction";
 import Skills from "@/components/skills";
 import MoveIn from "@/components/utils/move-in";
 import VisibleWhenScrollAt from "@/components/utils/visible-when-scroll-at";
-import { useTheme } from "next-themes";
-import { useState } from "react";
 import { useTranslation } from "react-i18next";
 import { twMerge } from "tailwind-merge";
 
 export default function Home() {
   const { t, i18n } = useTranslation();
-  const [go, setGo] = useState("");
-
-  const { theme, setTheme } = useTheme();
 
   return (
     <main className="pb-6">
       <SelfIntroduction />
 
       <VisibleWhenScrollAt
-        Header={() => <MoveIn title={"skills"} />}
+        Header={() => <MoveIn title={t("title.skills")} />}
         Content={({ isInView }) => (
           <Skills
             className={twMerge(
@@ -33,8 +28,8 @@ export default function Home() {
       />
 
       <VisibleWhenScrollAt
-        Header={() => <MoveIn title={"projects"} from="right" />}
-        ratio={0.4}
+        Header={() => <MoveIn title={t("title.projects")} from="right" />}
+        ratio={0.5}
         Content={({ isInView }) => (
           <Projects
             className={twMerge(
@@ -46,7 +41,7 @@ export default function Home() {
       />
 
       <VisibleWhenScrollAt
-        Header={() => <MoveIn title={"experiences"} from="left" />}
+        Header={() => <MoveIn title={t("title.experiences")} from="left" />}
         Content={({ isInView }) => (
           <Experiences
             className={twMerge(

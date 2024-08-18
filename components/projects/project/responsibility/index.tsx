@@ -1,20 +1,24 @@
+import { useTranslation } from "react-i18next";
 import ResponsibilityItem from "./item";
 
-const data = [
-  "front",
-  "back end and something elese",
-  "design and test and wanna",
-];
+interface ResponsibilityProps {
+  roles: string[];
+  dataKey: string;
+}
 
-const Responsibility = () => {
+const Responsibility = ({ roles, dataKey }: ResponsibilityProps) => {
+  const { t } = useTranslation();
   return (
     <>
       <div className="flex flex-col gap-4 flex-1">
-        <p className="uppercase mb-2  text-ttertiary text-lg">responsibility</p>
-        {data.map((item, index) => (
+        <p className="uppercase mb-2  text-ttertiary text-lg font-bold">
+          {t(`projects.responsibility`)}
+        </p>
+        {roles.map((item, index) => (
           <ResponsibilityItem
             index={index}
-            content={item}
+            name={t(`projects.${dataKey}.roles.${item}.name`)}
+            detail={t(`projects.${dataKey}.roles.${item}.detail`)}
             key={`responsibility-${index}`}
           />
         ))}

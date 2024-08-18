@@ -1,3 +1,100 @@
 {
-  "test": "測繪"
+  "title": {
+    "skills": "专业技能",
+    "projects": "项目",
+    "experiences": "工作经验"
+  },
+  "resume": "简历文件",
+  "email": "邮箱",
+  "github": "GitHub",
+  "dev": "dev.to",
+  "not-found": "抱歉，这里没有内容",
+  "home": "首页",
+  "name": "刘璇",
+  "position": "全栈工程师",
+  "description": "<p>目前 25 岁，有 2 年前端开发工作经验，1 年后端开发经验。</p><p>在易智瑞公司担任两年开发工程师，期间参与实景三维平台、一带一路科技创新系统等项目的开发，工作职责包括 <mark>web 前端开发</mark>以及 <mark>python 开发</mark>。</p><p>熟悉 <mark>React</mark> 生态， 了解 <mark>Django、django-rest-framework</mark> 及常用第三方库， 能够独立完成前后端开发。</p><p>我希望学习和了解更多技术，累积更多经验。很期待完成有意义的工作。</p>",
+  "skills": {
+    "heading": "skills",
+    "react": {
+      "title": "熟悉 React 生态",
+      "detail": "<li>有两年 react 开发经验，使用 react 开发了地图可视化系统、后台管理系统、规划平台、教学系统等</li><li>熟练使用 react 以及相关库，包括 hooks、react-router、redux/toolkit 状态管理、react-i18next 国际化等。</li><li>有 nextjs 使用经验</li><li>了解 Vite 构建工具及配置</li><li>熟练使用 umijs 解决方案框架</>"
+    },
+    "django": {
+      "title": "了解 Django web 框架和 django-rest-framework",
+      "detail": ""
+    },
+    "typescript": {
+      "title": "掌握 HTML CSS JavaScript typescript JSDoc",
+      "detail": ""
+    },
+    "database": {
+      "title": "接触 PostgreSQL 关系型数据库， mongodb redis noSQL 数据库，了解 SQL 语言",
+      "detail": ""
+    },
+    "tailwindcss": {
+      "title": "熟悉 tailwindcss, 常用UI组件库 Ant-design shadcn/ui 的使用，了解响应式布局。",
+      "detail": ""
+    },
+    "more": {
+      "title": "英语 CET-6，擅长观察和消化",
+      "detail": ""
+    }
+  },
+  "projects": {
+    "heading": "projects",
+    "detail": "查看详细信息",
+    "responsibility": "工作内容",
+    "links": "链接",
+    "more": "查看更多项目",
+    "bemarkdownnotes": {
+      "name": "Markdown 笔记应用",
+      "summary": "<p>klsdjfla</p><p>123klsdflsdkahfskajdfhskdcnskj</p>",
+      "roles": {
+        "design": {
+          "name": "系统功能、界面设计",
+          "detail": "系统功能、界面设计"
+        },
+        "frontend": {
+          "name": "前端开发",
+          "detail": "designer"
+        },
+        "backend": {
+          "name": "后端开发",
+          "detail": "designer"
+        }
+      },
+      "links": {
+        "deployment1": "查看网站",
+        "deployment2": "查看网站（备用部署）",
+        "frontend": "GitHub 前端仓库",
+        "backend": "GitHub 后端仓库"
+      },
+      "descriptions": {
+        "opening": "woshizenm",
+        "welcome": "kldsahiewnksdcnksdjfhsk"
+      }
+    }
+  },
+  "experiences": {
+    "header": {
+      "position": "职位",
+      "company": "公司",
+      "duration": "时间",
+      "description": "工作内容"
+    },
+
+    "geoscene": {
+      "position": "前端工程师",
+      "company": "易智瑞信息技术有限公司",
+      "duration": "2022.05-2024.03",
+      "description": "<li>123dskfhiuweyrqpoweiugjdhgfsjhfguweyrtuwyertuw</li><li>123dskfhiuweyrqpoweiugjdhgfsjhfguweyrtuwyertuw</li>"
+    },
+    "chengan": {
+      "position": "GIS工程师",
+      "company": "城安大数据有限公司",
+      "duration": "2021.07-2022.04",
+      "description": "<li>123dskfhiuweyrqpoweiugjdhgfsjhfguweyrtuwyertuw</li><li>123dskfhiuweyrqpoweiugjdhgfsjhfguweyrtuwyertuw</li><li>123dskfhiuweyrqpoweiugjdhgfsjhfguweyrtuwyertuw</li>"
+    }
+  },
+  "contact": "请与我联络"
 }

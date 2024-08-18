@@ -29,19 +29,21 @@ const Cards = forwardRef(({ total }: CardProps, ref) => {
           setItem(_item);
         },
         handleEraser: (_item: SkillItem) => {
-          if (timeRef.current) {
-            return;
-          }
-          setIsEraser(true);
-          timeRef.current = setTimeout(() => {
+          const end = () => {
             setItem(_item);
             setIsEraser(false);
             timeRef.current = undefined;
-          }, 1125);
+          };
+          if (timeRef.current) {
+            clearTimeout(timeRef.current);
+            end();
+          }
+          setIsEraser(true);
+          timeRef.current = setTimeout(end, 1125);
         },
       };
     },
-    []
+    [isEraser]
   );
 
   useEffect(() => {

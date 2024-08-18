@@ -1,11 +1,13 @@
 "use client";
 import { useEffect, useRef, useState } from "react";
+import { useTranslation } from "react-i18next";
 import { Tooltip } from "react-tooltip";
 import { twMerge } from "tailwind-merge";
 import Links from "./links";
 import NamePosition from "./name-position";
 
 const Header = () => {
+  const { t } = useTranslation();
   const topLineRef = useRef<HTMLDivElement>(null);
   const observeRef = useRef<IntersectionObserver>();
   const [isStickyTop, setStickyTop] = useState(false);
@@ -54,7 +56,11 @@ const Header = () => {
           isStickyTop ? "bg-header-background" : ""
         )}
       >
-        <NamePosition isStickyTop={isStickyTop} />
+        <NamePosition
+          isStickyTop={isStickyTop}
+          name={t("name")}
+          position={t("position")}
+        />
 
         <Links isStickyTop={isStickyTop} className="justify-end w-full" />
       </header>

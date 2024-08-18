@@ -8,7 +8,7 @@ interface VisibleWhenScrollAtProps {
 const VisibleWhenScrollAt = ({
   Header,
   Content,
-  ratio = 0.4,
+  ratio = 0.6,
   once = true,
 }: VisibleWhenScrollAtProps) => {
   const topLineRef = useRef<HTMLDivElement>(null);
@@ -27,7 +27,6 @@ const VisibleWhenScrollAt = ({
     const rootTargetHeightRatio = +(
       window.innerHeight / topLineRef.current.clientHeight
     ).toFixed(6);
-
     const options = {
       root: null,
       rootMargin: "",
@@ -37,7 +36,9 @@ const VisibleWhenScrollAt = ({
 
     const callback = (entries: IntersectionObserverEntry[]) => {
       const [entry] = entries;
-
+      if (rootTargetHeightRatio < 1) {
+        console.log(entry);
+      }
       if (entry.isIntersecting) {
         setIsInView(true);
         if (once) {

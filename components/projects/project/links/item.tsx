@@ -1,6 +1,12 @@
 import ArrowUp from "@/components/icons/arrow-up";
+import UnderlineLink from "@/components/utils/underline-link";
 
-const LinkItem = ({ name, url }) => {
+interface LinkItemProps {
+  name: string;
+  url: string;
+}
+
+const LinkItem = ({ name, url }: LinkItemProps) => {
   return (
     <div className="bg-table-header-background py-2 px-4 relative overflow-hidden rounded-md flex justify-between items-center">
       <div
@@ -9,21 +15,7 @@ const LinkItem = ({ name, url }) => {
           backgroundColor: "rgb(77,109,88)",
         }}
       ></div>
-      <div
-        data-tooltip-id="my-tooltip"
-        data-tooltip-content={url}
-        data-tooltip-place="top"
-        className="group flex flex-col w-max cursor-pointer"
-      >
-        <a
-          target="blank"
-          href={url}
-          className="px-2 group-hover:text-thighlight text-tsecondary transition-all"
-        >
-          {name}
-        </a>
-        <div className="w-0 h-0.5 bg-thighlight bottom-0 group-hover:w-full transition-all"></div>
-      </div>
+      <UnderlineLink name={name} url={url} />
       <div className="w-6 sm:w-8 cursor-pointer">
         <ArrowUp />
       </div>

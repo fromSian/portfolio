@@ -1,27 +1,43 @@
-import Media from "../media";
+import { sanitize } from "dompurify";
+import { useTranslation } from "react-i18next";
+import MediaMulti from "../media/multi";
+import MediaOne from "../media/one";
 
-const MediaWithPara = ({ direction = "right" }) => {
+interface MediaWithParaProps {
+  dataKey: string;
+  desc: Description;
+  direction?: "right" | "left";
+}
+
+const MediaWithPara = ({
+  dataKey,
+  desc,
+  direction = "right",
+}: MediaWithParaProps) => {
+  const { t } = useTranslation();
   return (
     <div className="clear-both">
-      <Media direction={direction} />
+      {desc.medias?.length &&
+        (desc.medias.length > 1 ? (
+          <MediaMulti
+            direction={direction}
+            medias={desc.medias}
+            dataKey={dataKey}
+          />
+        ) : (
+          <MediaOne
+            direction={direction}
+            media={desc.medias[0]}
+            dataKey={dataKey}
+          />
+        ))}
 
-      <div className="">
-        <p className="break-all mb-4 leading-7">
-          j;lauilere mjkjnvsdkfhweuityuirewfkdsjfhkw ;lauilere
-          mjkjnvsdkfhweuityuirewfkdsjfhkw;lauilere
-          mjkjnvsdkfhweuityuirewfkdsjfhkw;lauilere
-          mjkjnvsdkfhweuityuirewfkdsjfhkw;lauilere
-          mjkjnvsdkfhweuityuirewfkdsjfhkw;lauilere
-          mjkjnvsdkfhweuityuirewfkdsjfhkw;lauilere
-          mjkjnvsdkfhweuityuirewfkdsjfhkw;lauilere
-        </p>
-        <p className="break-all my-4">
-          j;lauilere mjkjnvsdkfhweuityuirewfkdsjfhkw ;lauilere
-          mjkjnvsdkfhweuityuirewfkdsjfhkw;lauilere
-          mjkjnvsdkfhweuityuirewfkdsjfhkw;lauilere
-          mjkjnvsdkfhweuityuirewfkdsjfhkw;lauilere
-        </p>
-      </div>
+      <div
+        className="flex flex-col gap-4"
+        dangerouslySetInnerHTML={{
+          __html: sanitize(t(`projects.${dataKey}.descriptions.${desc.key}`)),
+        }}
+      ></div>
     </div>
   );
 };

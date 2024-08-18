@@ -9,6 +9,9 @@ const config: Config = {
   ],
   theme: {
     extend: {
+      screens: {
+        sm: "540px",
+      },
       boxShadow: {
         note: "0.2rem 0.2rem 1.2rem var(--shadow-color)",
       },

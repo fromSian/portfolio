@@ -1,8 +1,9 @@
 import AnimatedLink from "@/components/utils/animate-link";
 import { useRef, useState } from "react";
+import { useTranslation } from "react-i18next";
 import { twMerge } from "tailwind-merge";
 
-const indexs = {
+const indexs: Record<number, number[][]> = {
   0: [
     [0.6, 1.2],
     [-0.6, 1.2],
@@ -86,10 +87,13 @@ const origin = [
     height: 40,
   },
 ];
-
-const More = () => {
-  const [styleInfos, setStyleInfos] = useState(origin);
-  const timeRef = useRef();
+interface MoreProps {
+  keys: string[];
+}
+const More = ({ keys }: MoreProps) => {
+  const [styleInfos, setStyleInfos] = useState<StyleInfo[]>(origin);
+  const timeRef = useRef<ReturnType<typeof setTimeout>>();
+  const { t } = useTranslation();
 
   const handleSizeChange = (index: number) => {
     setStyleInfos((v) => {
@@ -99,8 +103,8 @@ const More = () => {
         return i === origin.length - 1
           ? {
               ...item,
-              top: item.top + _trans[0] * 10,
-              left: item.left + _trans[1] * 10,
+              top: item.top ? item.top + _trans[0] * 10 : item.top,
+              left: item.left ? item.left + _trans[1] * 10 : item.left,
               width: item.width + _trans[2] * 10,
               height: item.height + _trans[3] * 10,
             }
@@ -124,10 +128,10 @@ const More = () => {
   };
 
   return (
-    <>
+    <div className="mb-12">
       <div className="divider my-8"></div>
       <p className="text-2xl font-bold text-ttertiary text-center mb-4 uppercase">
-        more projects
+        {t("projects.more")}
       </p>
       <div
         className="hidden md:block relative w-[80%] xl:w-[60%] ml-[10%] xl:ml-[20%] h-96"
@@ -142,7 +146,10 @@ const More = () => {
         {styleInfos.map((info, index) => {
           const { top, left, bottom, right, width, height, ...rest } = info;
           return (
-            <AnimatedLink href="/projects/2312" key={`catalog-random-${index}`}>
+            <AnimatedLink
+              href={`/projects/${keys[index]}`}
+              key={`catalog-random-${index}`}
+            >
               <div
                 onMouseOver={(e) => {
                   e.stopPropagation();
@@ -164,7 +171,7 @@ const More = () => {
                   ...rest,
                 }}
               >
-                {index}be markdownnotes markdownnotesmarkdownnotes
+                {t(`projects.${keys[index]}.name`)}
               </div>
             </AnimatedLink>
           );
@@ -173,14 +180,17 @@ const More = () => {
 
       <div className="md:hidden border-4 w-full last:border-b-0 border-black">
         {styleInfos.map((item, index) => (
-          <AnimatedLink href="/projects/123" key={`catalog-rect-${index}`}>
+          <AnimatedLink
+            href={`/projects/${keys[index]}`}
+            key={`catalog-rect-${index}`}
+          >
             <div className="p-4 cursor-pointer border-b-4 border-black">
-              be markdownnotes markdownnotesmarkdownnotes
+              {t(`projects.${keys[index]}.name`)}
             </div>
           </AnimatedLink>
         ))}
       </div>
-    </>
+    </div>
   );
 };
 

@@ -3,9 +3,10 @@ import { twMerge } from "tailwind-merge";
 import ImageError from "../icons/image-error";
 interface ImageProps {
   src: string;
-  imageLoaded: ImageStatus;
-  setImageLoaded: Dispatch<SetStateAction<ImageStatus>>;
+  imageLoaded: boolean;
+  setImageLoaded: Dispatch<SetStateAction<boolean>>;
   className?: string;
+  imageClassName?: string;
   isShowError?: boolean;
 }
 
@@ -14,17 +15,18 @@ const BeautyImage = ({
   imageLoaded,
   setImageLoaded,
   className = "",
+  imageClassName = "",
   isShowError = false,
 }: ImageProps) => {
   /**
    * onLoad event
    */
   const onImageLoad = () => {
-    setImageLoaded("success");
+    setImageLoaded(true);
   };
 
   const onError = () => {
-    setImageLoaded("fail");
+    setImageLoaded(false);
   };
 
   return (
@@ -37,16 +39,21 @@ const BeautyImage = ({
       <div
         className={twMerge(
           "grid",
-          imageLoaded !== "fail"
+          imageLoaded
             ? "grid-rows-[1fr] opacity-100"
             : "grid-rows-[0fr] opacity-0"
         )}
       >
         <div className="overflow-hidden">
-          <img className="" src={src} onLoad={onImageLoad} onError={onError} />
+          <img
+            className={imageClassName}
+            src={src}
+            onLoad={onImageLoad}
+            onError={onError}
+          />
         </div>
       </div>
-      {imageLoaded === "fail" && isShowError && (
+      {!imageLoaded && isShowError && (
         <div className="flex flex-col items-center justify-center">
           <ImageError />
         </div>

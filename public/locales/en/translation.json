@@ -1,3 +1,43 @@
 {
-  "test": "test"
+  "name": "Soto Liu Xuan",
+  "position": "full stack developer",
+  "description": "I usually use react for front-end, and django for backend. I have experiences in 2years of development.",
+  "skills": {
+    "heading": "skills",
+    "react": {
+      "title": "",
+      "detail": ""
+    },
+    "django": {
+      "title": "",
+      "detail": ""
+    },
+    "typescript": {
+      "title": "",
+      "detail": ""
+    },
+    "database": {
+      "title": "",
+      "detail": ""
+    },
+    "next": {
+      "title": "",
+      "detail": ""
+    },
+    "tailwindcss": {
+      "title": "",
+      "detail": ""
+    },
+    "html": {
+      "title": "",
+      "detail": ""
+    },
+    "more": {
+      "title": "",
+      "detail": ""
+    }
+  },
+  "projects": {
+    "heading": "projects"
+  }
 }

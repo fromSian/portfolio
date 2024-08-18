@@ -1,3 +1,4 @@
+import { skillKeys } from "@/data/skills";
 import { useEffect, useRef, useState } from "react";
 import { twMerge } from "tailwind-merge";
 import Cards from "./cards";
@@ -6,21 +7,11 @@ interface SkillProps {
   className: string;
 }
 
-const items = [
-  "react",
-  "django",
-  "typescript",
-  "database",
-  "next",
-  "tailwindcss",
-  "html",
-  "more",
-];
-
 const Skills = ({ className = "" }: SkillProps) => {
   const [activeKey, setActiveKey] = useState("");
   const [data, setData] = useState<SkillItem[]>([]);
-  const cardsRef = useRef();
+  const cardsRef = useRef<CardsProps>();
+  const timeRef = useRef<ReturnType<typeof setTimeout>>();
 
   useEffect(() => {
     const getOneIconComponent = async (key: string) => {
@@ -37,13 +28,10 @@ const Skills = ({ className = "" }: SkillProps) => {
 
     const getIconComponents = async () => {
       const _data = await Promise.all(
-        items.map(async (item, index) => ({
+        skillKeys.map(async (item, index) => ({
           index: index,
           key: item,
-          title: `${item} klswrwklekfnslkjfpweirjwe klswrwklekfnslkjfpweirjwe klswrwklekfnslkjfpweirjwe klswrwklekfnslkjfpweirjwe klswrwklekfnslkjfpweirjwe klswrwklekfnslkjfpweirjwe`,
           Icon: await getOneIconComponent(item),
-          description:
-            "I want to be able to able to change my idea about the word",
         }))
       );
       setData(_data);
@@ -54,8 +42,14 @@ const Skills = ({ className = "" }: SkillProps) => {
   }, []);
 
   const handleClick = (item: SkillItem) => {
-    setActiveKey(item.key);
-    cardsRef.current?.handleEraser(item);
+    if (timeRef.current) {
+      clearTimeout(timeRef.current);
+      timeRef.current = undefined;
+    }
+    timeRef.current = setTimeout(() => {
+      setActiveKey(item.key);
+      cardsRef.current?.handleEraser(item);
+    }, 100);
   };
 
   return (
@@ -65,12 +59,7 @@ const Skills = ({ className = "" }: SkillProps) => {
         className
       )}
     >
-      <List
-        data={data}
-        handleClick={handleClick}
-        activeKey={activeKey}
-        setActiveKey={setActiveKey}
-      />
+      <List data={data} handleClick={handleClick} activeKey={activeKey} />
       <Cards ref={cardsRef} total={data.length} />
     </div>
   );

@@ -2,7 +2,7 @@
 
 import { dev_url, email_url, github_url, resume_url } from "@/common/links";
 import { useTheme } from "next-themes";
-import { useCallback, useEffect, useRef, useState } from "react";
+import { useCallback, useRef } from "react";
 import { useTranslation } from "react-i18next";
 import { twMerge } from "tailwind-merge";
 import Dev from "../icons/links/dev";
@@ -63,8 +63,6 @@ const Links = ({
   const { theme, setTheme } = useTheme();
   const timeRef = useRef<ReturnType<typeof setTimeout>>();
 
-  const [mounted, setMounted] = useState(false);
-
   const handleLanguageChange = () => {
     if (timeRef.current) {
       clearTimeout(timeRef.current);
@@ -85,40 +83,38 @@ const Links = ({
     window.open(url);
   };
 
-  useEffect(() => {
-    setMounted(true);
-  }, []);
-
-  if (!mounted) {
-    return null;
-  }
   return (
     <div className={twMerge("flex gap-2 items-center", className)}>
       <IconWrap
         isStickyTop={isStickyTop}
         Icon={Resume}
-        tooltip="resume"
+        tooltip={t("resume")}
         onClick={() => handleOpen(resume_url)}
         isBottom={isBottom}
       />
-      <IconWrap
-        isStickyTop={isStickyTop}
-        Icon={Email}
-        tooltip="email"
-        isBottom={isBottom}
-        onClick={() => handleOpen(email_url)}
-      />
+      <a
+        href={email_url}
+        className={twMerge(
+          "cursor-pointer transition-all",
+          isStickyTop ? "w-6 sm:w-8 lg:w-10" : "w-8 sm:w-10 lg:w-12"
+        )}
+        data-tooltip-id="my-tooltip"
+        data-tooltip-content={email_url}
+        data-tooltip-place="top"
+      >
+        <Email />
+      </a>
       <IconWrap
         isStickyTop={isStickyTop}
         Icon={GitHubIcon}
-        tooltip="github"
+        tooltip={t("github")}
         onClick={() => handleOpen(github_url)}
         isBottom={isBottom}
       />
       <IconWrap
         isStickyTop={isStickyTop}
         Icon={Dev}
-        tooltip="dev"
+        tooltip={t("dev")}
         onClick={() => handleOpen(dev_url)}
         isBottom={isBottom}
       />

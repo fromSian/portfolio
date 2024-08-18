@@ -1,24 +1,24 @@
-import { Dispatch, SetStateAction } from "react";
+import { sanitize } from "dompurify";
+import { useTranslation } from "react-i18next";
 import { twMerge } from "tailwind-merge";
-
 interface ListProps {
   data: SkillItem[];
   handleClick: (item: SkillItem) => void;
   activeKey: string;
-  setActiveKey: Dispatch<SetStateAction<string>>;
 }
 
-const List = ({ data, handleClick, activeKey, setActiveKey }: ListProps) => {
+const List = ({ data, handleClick, activeKey }: ListProps) => {
+  const { t } = useTranslation();
   return (
     <div className="flex gap-4 flex-col h-full justify-center flex-1">
       {data.map((item, index) => {
         return (
           <div
             key={`skills-${index}`}
-            className="group flex gap-4 cursor-pointer items-start pointer-events-none sm:pointer-events-auto"
+            className="group flex gap-4 cursor-pointer pointer-events-none sm:pointer-events-auto items-center"
             onClick={() => handleClick(item)}
           >
-            <div className="flex-shrink-0 group-hover:shadow-note group-active:scale-90 transition-all">
+            <div className="flex-shrink-0 group-active:scale-90 transition-all">
               <item.Icon />
             </div>
             <div>
@@ -28,11 +28,14 @@ const List = ({ data, handleClick, activeKey, setActiveKey }: ListProps) => {
                   activeKey === item.key && "sm:text-thighlight"
                 )}
               >
-                {item.title}
+                {t(`skills.${item.key}.title`)}
               </p>
-              <p className="block sm:hidden italic text-ttertiary">
-                {item.description}
-              </p>
+              <div
+                className="flex sm:hidden text-ttertiary flex-col gap-1 "
+                dangerouslySetInnerHTML={{
+                  __html: sanitize(t(`skills.${item.key}.detail`)),
+                }}
+              ></div>
             </div>
           </div>
         );

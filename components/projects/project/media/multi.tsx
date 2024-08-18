@@ -1,42 +1,19 @@
-import { useCallback, useEffect, useRef, useState } from "react";
+import { useCallback, useEffect, useMemo, useRef, useState } from "react";
 import { twMerge } from "tailwind-merge";
 import Image from "./image";
 const interval = 2000;
 
-const _data = [
-  {
-    index: 0,
-    type: "image",
-    src: "/images/1.png",
-    title: "1.png",
-  },
-  {
-    index: 1,
-    type: "image",
-    src: "/images/1.png",
-    title: "1.png",
-  },
-  {
-    index: 2,
-    type: "image",
-    src: "/images/icons8-github.svg",
-    title: "1.png",
-  },
-  {
-    index: 3,
-    type: "image",
-    src: "/images/test.svg",
-    title: "1.png",
-  },
-  {
-    index: 4,
-    type: "image",
-    src: "/images/test.svg",
-    title: "1.png",
-  },
-];
-const Media = ({ direction }) => {
-  const [data, setData] = useState(_data);
+interface MediaProps {
+  direction: "left" | "right";
+  medias: Media[];
+  dataKey: string;
+}
+
+const MediaMulti = ({ direction, medias, dataKey }: MediaProps) => {
+  const data = useMemo(() => {
+    const _medias = [medias[0], ...medias, medias[medias.length - 1]];
+    return _medias.map((media, index) => ({ index, ...media }));
+  }, [medias]);
 
   const [currentIndex, setCurrentIndex] = useState(1);
   const [translateX, setTranslateX] = useState<number>(
@@ -48,6 +25,11 @@ const Media = ({ direction }) => {
   const timeoutRef = useRef<ReturnType<typeof setTimeout>>();
   const parentRef = useRef<HTMLDivElement>(null);
   const [width, setWidth] = useState(0);
+
+  useEffect(() => {
+    setTranslateX((-100 / data.length) * 1);
+    setDir(1);
+  }, [data]);
 
   useEffect(() => {
     const onresize = () => {
@@ -114,7 +96,7 @@ const Media = ({ direction }) => {
     <div
       ref={parentRef}
       className={twMerge(
-        "w-full sm:w-[50%] overflow-hidden float-start sm:float-right sm:mx-4 mb-4",
+        "w-full sm:w-[50%] overflow-hidden float-none sm:float-right sm:mx-4 mb-4",
         direction === "right" && "sm:float-right",
         direction === "left" && "sm:float-left"
       )}
@@ -137,7 +119,10 @@ const Media = ({ direction }) => {
                   width: width,
                 }}
               >
-                <Image src={item.src} className="border" />
+                <Image
+                  src={`/images/${dataKey}/${item.url}`}
+                  className="rounded-md"
+                />
               </div>
             ))}
           </div>
@@ -166,4 +151,4 @@ const Media = ({ direction }) => {
   );
 };
 
-export default Media;
+export default MediaMulti;
