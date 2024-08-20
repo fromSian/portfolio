@@ -1,17 +1,16 @@
 export const projectKeys = [
   "bemarkdownnotes",
-  "musiczone",
-  "question",
+  "cim",
+  "geoscene",
   "realscene",
   "ydyl",
-  "teaching",
 ];
 
 export const projectData = [
   {
     key: "bemarkdownnotes",
     roles: ["design", "frontend", "backend"],
-    image: "welcome.png",
+    image: "signin.png",
     deployment: "https://bemarkdownnotes.netlify.app/",
     links: [
       {
@@ -20,74 +19,60 @@ export const projectData = [
       },
       {
         key: "deployment2",
-        url: "https://bemarkdownnotes.netlify.app/",
+        url: "https://be-markdown-notes.vercel.app/",
       },
       {
         key: "frontend",
-        url: "https://bemarkdownnotes.netlify.app/",
+        url: "https://github.com/fromSian/be-markdown-notes",
       },
       {
         key: "backend",
-        url: "https://bemarkdownnotes.netlify.app/",
+        url: "https://github.com/fromSian/all-in-one-note-back",
       },
     ],
     descriptions: [
       {
         key: "opening",
+      },
+      {
+        key: "account",
         medias: [
           {
-            key: "image1",
-            url: "welcome.png",
+            url: "signin.png",
             type: "image",
           },
           {
-            key: "image2",
-            url: "welcome.png",
+            url: "signup.png",
             type: "image",
           },
         ],
       },
       {
-        key: "welcome",
+        key: "note",
         medias: [
           {
-            key: "image1",
-            url: "image1.png",
+            url: "note-empty.png",
+            type: "image",
+          },
+          {
+            url: "note-items.png",
             type: "image",
           },
         ],
       },
       {
-        key: "welcome",
-      },
-    ],
-  },
-  {
-    key: "musiczone",
-    roles: ["design", "frontend", "backend"],
-    image: "welcome.png",
-    links: [
-      {
-        key: "frontend",
-        url: "https://bemarkdownnotes.netlify.app/",
-      },
-      {
-        key: "backend",
-        url: "https://bemarkdownnotes.netlify.app/",
-      },
-    ],
-    descriptions: [
-      {
-        key: "opening",
+        key: "show",
         medias: [
           {
-            key: "image1",
-            url: "welcome.png",
+            url: "show.png",
             type: "image",
           },
           {
-            key: "image2",
-            url: "welcome.png",
+            url: "datetime.png",
+            type: "image",
+          },
+          {
+            url: "collaspe.png",
             type: "image",
           },
         ],
@@ -95,50 +80,44 @@ export const projectData = [
     ],
   },
   {
-    key: "question",
-    roles: ["design", "frontend", "backend"],
-    links: [
-      {
-        key: "frontend",
-        url: "https://bemarkdownnotes.netlify.app/",
-      },
-      {
-        key: "backend",
-        url: "https://bemarkdownnotes.netlify.app/",
-      },
-    ],
+    key: "cim",
+    roles: ["frontend"],
     descriptions: [
       {
+        key: "stack",
+      },
+      {
         key: "opening",
-        medias: [
-          {
-            url: "welcome.png",
-            type: "image",
-          },
-          {
-            url: "welcome.png",
-            type: "image",
-          },
-        ],
+      },
+    ],
+  },
+  {
+    key: "ydyl",
+    roles: ["data", "frontend"],
+    descriptions: [
+      {
+        key: "stack",
+      },
+      {
+        key: "opening",
       },
     ],
   },
   {
     key: "realscene",
-    roles: ["design", "frontend"],
+    roles: ["frontend"],
     descriptions: [
       {
         key: "opening",
-        medias: [
-          {
-            url: "welcome.png",
-            type: "image",
-          },
-          {
-            url: "welcome.png",
-            type: "image",
-          },
-        ],
+      },
+    ],
+  },
+  {
+    key: "geoscene",
+    roles: ["frontend"],
+    descriptions: [
+      {
+        key: "opening",
       },
     ],
   },

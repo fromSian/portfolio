@@ -88,6 +88,23 @@ mark {
     @apply border-b-2 w-full;
     border-color: var(--divider-border);
   }
+  .content > li {
+    @apply leading-10;
+    list-style: disc !important;
+  }
+
+  .content > p {
+    @apply leading-10;
+    text-indent: 2em;
+  }
+
+  .project_content {
+    @apply content;
+  }
+  .project_content > p,
+  .project_content > li {
+    @apply mb-4;
+  }
 }
 
 ::view-transition-old(root) {
@@ -161,12 +178,4 @@ mark {
 .right-arrow:active {
   transform: scale(0.92);
   transition: 0.3s;
-}
-
-.content > li {
-  list-style: disc !important;
-}
-
-.content > p {
-  text-indent: 2em;
 }

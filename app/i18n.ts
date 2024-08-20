@@ -20,7 +20,7 @@ i18n
   .init({
     ns: ["translation"],
     defaultNS: "translation",
-    fallbackLng: "en",
+    fallbackLng: "zh",
     debug: false,
     detection: {
       caches: ["localStorage"],

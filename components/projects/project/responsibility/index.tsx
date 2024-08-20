@@ -4,9 +4,14 @@ import ResponsibilityItem from "./item";
 interface ResponsibilityProps {
   roles: string[];
   dataKey: string;
+  isHideNumber?: boolean;
 }
 
-const Responsibility = ({ roles, dataKey }: ResponsibilityProps) => {
+const Responsibility = ({
+  roles,
+  dataKey,
+  isHideNumber = false,
+}: ResponsibilityProps) => {
   const { t } = useTranslation();
   return (
     <>
@@ -20,6 +25,7 @@ const Responsibility = ({ roles, dataKey }: ResponsibilityProps) => {
             name={t(`projects.${dataKey}.roles.${item}.name`)}
             detail={t(`projects.${dataKey}.roles.${item}.detail`)}
             key={`responsibility-${index}`}
+            isHideNumber={isHideNumber}
           />
         ))}
       </div>

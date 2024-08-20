@@ -33,7 +33,7 @@ const MediaWithPara = ({
         ))}
 
       <div
-        className="flex flex-col gap-4"
+        className="project_content"
         dangerouslySetInnerHTML={{
           __html: sanitize(t(`projects.${dataKey}.descriptions.${desc.key}`)),
         }}

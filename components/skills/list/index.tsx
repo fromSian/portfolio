@@ -10,7 +10,7 @@ interface ListProps {
 const List = ({ data, handleClick, activeKey }: ListProps) => {
   const { t } = useTranslation();
   return (
-    <div className="flex gap-4 flex-col h-full justify-center flex-1">
+    <div className="flex gap-6 flex-col h-full justify-center flex-1">
       {data.map((item, index) => {
         return (
           <div
@@ -24,7 +24,7 @@ const List = ({ data, handleClick, activeKey }: ListProps) => {
             <div>
               <p
                 className={twMerge(
-                  "text-lg font-bold",
+                  "text-lg font-bold leading-8",
                   activeKey === item.key && "sm:text-thighlight"
                 )}
               >

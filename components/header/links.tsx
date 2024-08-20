@@ -8,7 +8,6 @@ import { twMerge } from "tailwind-merge";
 import Dev from "../icons/links/dev";
 import Email from "../icons/links/email";
 import GitHubIcon from "../icons/links/github";
-import LanguageIcon from "../icons/links/language-icon";
 import Resume from "../icons/links/resume";
 import LightIcon from "../icons/theme/light";
 
@@ -120,13 +119,13 @@ const Links = ({
       />
       {!isBottom && (
         <>
-          <IconWrap
+          {/* <IconWrap
             onClick={handleLanguageChange}
             isStickyTop={isStickyTop}
             Icon={LanguageIcon}
             tooltip={i18n.resolvedLanguage}
             isBottom={isBottom}
-          />
+          /> */}
           <IconWrap
             isStickyTop={isStickyTop}
             Icon={LightIcon}

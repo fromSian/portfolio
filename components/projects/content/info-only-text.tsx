@@ -24,7 +24,7 @@ const InfoOnlyText = ({ project }: InfoOnlyTextProps) => {
       </div>
 
       <div
-        className="break-all text-ttertiary content"
+        className="flex-1 break-all text-ttertiary content"
         dangerouslySetInnerHTML={{
           __html: sanitize(t(`projects.${key}.summary`)),
         }}
