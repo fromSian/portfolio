@@ -158,7 +158,7 @@ const More = ({ keys }: MoreProps) => {
                 className={twMerge(
                   "absolute transition-all duration-1000 border-black flex items-center justify-center p-4 overflow-hidden",
                   index < styleInfos.length - 1 ? "border-4" : "border-none",
-                  "text-ttertiary hover:text-current cursor-pointer",
+                  "text-ttertiary hover:text-thighlight hover:font-bold cursor-pointer",
                   "break-all text-wrap"
                 )}
                 style={{
@@ -184,7 +184,7 @@ const More = ({ keys }: MoreProps) => {
             href={`/projects/${keys[index]}`}
             key={`catalog-rect-${index}`}
           >
-            <div className="p-4 cursor-pointer border-b-4 border-black">
+            <div className="p-4 cursor-pointer border-b-4 border-black hover:text-thighlight hover:font-bold">
               {t(`projects.${keys[index]}.name`)}
             </div>
           </AnimatedLink>

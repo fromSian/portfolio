@@ -55,7 +55,7 @@ const Skills = ({ className = "" }: SkillProps) => {
   return (
     <div
       className={twMerge(
-        "flex justify-between gap-4 flex-col sm:flex-row w-full items-start",
+        "flex justify-between gap-4 flex-col sm:flex-row w-full items-center",
         className
       )}
     >

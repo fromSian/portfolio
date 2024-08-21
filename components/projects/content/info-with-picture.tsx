@@ -14,7 +14,7 @@ const InfoWithPicture = ({ project }: InfoInPictureProps) => {
   const { t } = useTranslation();
   return (
     <div className="flex flex-col gap-2 w-full justify-between items-center px-4 sm:px-8">
-      <div className="flex flex-col md:flex-row gap-0 md:gap-8 items-center">
+      <div className="flex flex-col md:flex-row gap-2 md:gap-8 items-center">
         {deployment ? (
           <UnderlineLink
             name={t(`projects.${key}.name`)}

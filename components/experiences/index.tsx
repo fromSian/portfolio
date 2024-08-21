@@ -62,7 +62,7 @@ const Experiences = ({ className = "" }: ProjectsProps) => {
             key={`experience-${key}`}
           >
             <div className="flex flex-col sm:flex-row gap-2 justify-between mb-2 sm:items-center">
-              <p className="flex gap-2 items-center">
+              <p className="flex gap-2 items-center justify-between">
                 <span className="text-xl font-bold">
                   {t(`experiences.${key}.position`)}
                 </span>

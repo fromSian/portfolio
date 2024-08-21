@@ -1,43 +1,161 @@
 {
-  "name": "Soto Liu Xuan",
-  "position": "full stack developer",
-  "description": "I usually use react for front-end, and django for backend. I have experiences in 2years of development.",
+  "title": {
+    "skills": "专业技能",
+    "projects": "项目",
+    "experiences": "工作经验"
+  },
+  "resume": "简历文件",
+  "email": "邮箱",
+  "github": "GitHub",
+  "dev": "dev.to",
+  "not-found": "抱歉，这里没有内容",
+  "home": "首页",
+  "name": "刘璇",
+  "position": "全栈工程师",
+  "description": "<p>目前 25 岁，有 2 年前端开发工作经验，1 年后端开发经验。</p><p>在易智瑞公司担任两年开发工程师，期间参与实景三维平台、一带一路科技创新系统等项目的开发，工作职责包括 <mark>web 前端开发</mark>以及 <mark>python 开发</mark>。</p><p>熟悉 <mark>React</mark> 生态， 了解 <mark>Django、django-rest-framework</mark> 及常用第三方库， 能够独立完成前后端开发。</p><p>我希望学习和了解更多技术，累积更多经验。很期待完成有意义的工作。</p>",
   "skills": {
     "heading": "skills",
     "react": {
-      "title": "",
-      "detail": ""
+      "title": "熟悉 React 生态，熟悉 hooks，有 next.js umi.js 使用经验。",
+      "detail": "<li>有两年 React 开发经验，使用 React 开发了后台管理系统、规划平台、教学系统、地图可视化系统等</li><li>熟练使用 React 以及相关库，包括 <mark>hooks</mark>、<mark>react-router</mark>、<mark>redux/toolkit</mark> 状态管理、<mark>react-i18next</mark> 国际化等。</li><li>有 <mark>next.js</mark> 使用经验</li><li>了解 <mark>Vite</mark> 构建工具及配置</li><li>熟练使用 <mark>umi.js</mark> 解决方案框架</>"
     },
     "django": {
-      "title": "",
-      "detail": ""
+      "title": "了解 Django web 框架和 django-rest-framework。",
+      "detail": "<li>了解 Django 开发 restful API 流程，熟悉 django-rest-framework。</li><li>熟悉常用第三方库，如 drf_yasg django_filters django-redis。</li><li>有结合 Google oauth2 的经验。</li><li>有自定义 django-rest-framework 序列化 mixin，permission 类，JSONRenderer 的经验。</li>"
     },
     "typescript": {
-      "title": "",
-      "detail": ""
+      "title": "掌握 HTML CSS JavaScript TypeScript JSDoc。",
+      "detail": "<li>有丰富的纯 HMTL + CSS + JavaScript 网页开发经验。编写过上百个 html 示例代码。</li><li>熟悉 TypeScript，有四个 TypeScript 项目开发经验。</li><li>熟悉 JSDoc 注释写法和配置，有使用 JSDoc 编写向客户提供的 API 文档经验。</li>"
     },
     "database": {
-      "title": "",
-      "detail": ""
-    },
-    "next": {
-      "title": "",
-      "detail": ""
+      "title": "接触过 PostgreSQL 关系型数据库， MongoDB、redis 非关系型数据库，了解 SQL 语言。",
+      "detail": "<li>有 PostgreSQL、MongoDB、redis 使用经验。</li><li>了解 SQL 语言，有使用 SQL 进行数据清洗、处理、统计的经验。</li>"
     },
     "tailwindcss": {
-      "title": "",
-      "detail": ""
-    },
-    "html": {
-      "title": "",
-      "detail": ""
+      "title": "熟悉 tailwindcss、Ant-Design、shadcn/ui 的使用，了解响应式布局，有良好的设计思维。",
+      "detail": "<li>熟悉 tailwindcss 使用，了解配置和状态修饰符的使用。</li><li>熟悉 Ant-Design 有多个 Ant-Design 项目开发经验。</li><li>了解 shadcn/ui 的使用，与 ui 组件库不同的是，这是一个 ui 组件集合，通过 npx 命令将指定组件代码复制到工程中，可以直接修改代码以达到目标样式。</li><li>了解响应式布局，适配不同尺寸窗口。</li><li>有良好的设计思维，有完整的系统设计经验（包括功能和界面），能够达到用户体验友好，界面美观简洁。</li>"
     },
     "more": {
-      "title": "",
-      "detail": ""
+      "title": "英语 CET-6，擅长观察和思考。",
+      "detail": "<li>英语能力良好。</li><li>擅长观察和举一反三。</li><li>喜欢阅读。</li>"
     }
   },
   "projects": {
-    "heading": "projects"
-  }
+    "heading": "projects",
+    "detail": "查看详细信息",
+    "responsibility": "负责内容",
+    "links": "链接",
+    "more": "查看更多项目",
+    "bemarkdownnotes": {
+      "name": "Markdown 笔记应用",
+      "summary": "<p>这是一个 markdown 笔记管理应用，为了用户可以舒适地使用和尽可能满足不同的书写和查看笔记习惯而设计开发的。提供了多种用户认证方式，方便用户选择和试用。带有完整的用户登录和管理功能，包括用户注册登录、通过谷歌登录，免注册试用，忘记密码，更新密码，谷歌/试用账户转为正式账户、更新头像、销毁账户。界面友好。在笔记编辑方面，操作流程顺畅简单。此外用户可以选择其偏好的笔记展示方式。</p><p>已部署上线，请点击标题查看或点击箭头查看详细介绍。</p>",
+      "roles": {
+        "design": {
+          "name": "系统功能、界面设计",
+          "detail": "设计应用有哪些功能，如何交互，界面样式"
+        },
+        "frontend": {
+          "name": "前端开发",
+          "detail": "完成前端开发所有内容"
+        },
+        "backend": {
+          "name": "后端开发",
+          "detail": "完成后端开发所有内容"
+        }
+      },
+      "links": {
+        "deployment1": "查看网站",
+        "deployment2": "查看网站（备用部署）",
+        "frontend": "GitHub 前端仓库",
+        "backend": "GitHub 后端仓库"
+      },
+      "descriptions": {
+        "opening": "<li>前端技术栈为：<mark>vite</mark> + <mark>react</mark> + <mark>typescript</mark> + <mark>react-i18next</mark> + <mark>tailwindCSS</mark> + <mark>shadcn/ui</mark> + <mark>react-image-crop</mark> + <mark>zod</mark> + <mark>tiptap/editor</mark> + <mark>redux/toolkit</mark> + <mark>react-router</mark></li><li>后端技术栈为：<mark>django</mark> + <mark>django-rest-framework</mark> + <mark>google-auth-oauthlib</mark> + <mark>django-redis</mark> + <mark>DRF API Logger</mark> + <mark>markdownify</mark> + <mark>drf_yasg</mark> + <mark>django_filters</mark> + <mark>PostgreSQL</mark> + <mark>Redis</mark></li><p><mark>react-i18next</mark> 来实现国际化，应用支持英文、简体中文、繁体中文三种文字。<mark>shadcn/ui</mark> 是一个 UI 组件集合，通过执行<mark> npx add xx </mark>将 ui 组件代码复制到工程中，可以直接修改代码达到想要的样式。</p>",
+        "account": "<p class='text-lg text-ttertiary'>提供多种用户认证方式，方便用户选择和试用，可以通过邮箱密码注册登录也可以通过谷歌账户登录，还提供了免注册试用一小时的功能。<p><li>邮箱密码注册设计思路为：输入邮箱 => 发送邮箱验证码 => 验证码通过 => 设定密码 => 注册成功。使用 django 的 email 模块通过 SMTP 主机和端口发送验证码邮件。将验证码存储在 redis 中以判断验证码是否有效，依据 redis 中的过期时间来限制一个邮箱地址一分钟内只能发送一次验证码。</li><li>通过谷歌登录借助了 google_auth_oauthlib 库生成 google authorization url 以及由 authorization response 得到token。前后端配合，后端编写 access 和 callback api，创建自定义的用户对象以及生成token，重定向至前端的谷歌登录结果页面；在前端，再次验证token是否有效。</li><li>设置免注册试用功能是由于我个人的经验，在寻找满足我需求的应用时，常常需要注册登录后才能它的功能是什么，如何操作的。然而，当我确认不再需要使用某个应用时，却很难找到如何注销账户。所以在这个应用中实现了免注册试用和注销账户的功能。</Li><li>考虑到使用中可能出现的需求，也实现了忘记密码模块的功能，更新密码功能。对于谷歌账户和试用账户，在登录期间，可以选择将账户转换为正式账户。</li>",
+        "note": "<p class='text-lg text-ttertiary'>在设计和开发笔记内容部分时，我希望笔记编辑操作流畅简单、界面简洁友好。</p><li>笔记结构设计为一篇笔记中包括多个子项。如此，可将同一主题的内容记录在一篇笔记内的不同子项中，使它们属于同一篇笔记又相对独立，方便查看。</li><li>选择了 markdown 语法，markdown 语法被广泛使用，满足常用的文字排版需求。</li><li>为了操作更加简单流畅，没有采用编辑和预览状态分开的模式，而是使用 tiptap/editor 来实现输入 markdown 语言、展示 markdown 排版、编辑更新在同一个编辑器内完成，无需按钮或键盘事件来切换不同状态，也使界面更加简洁。同时，tiptap/editor 有丰富的 extension 来满足特定的样式/功能需求。</li>",
+        "show": "<p class='text-lg text-ttertiary'>用户可以选择其偏好的展示方式。在使用某个应用时，会出现某个模块不想要看见，但是没有地方可以将其关闭的情况。基于这个想法，在展示上提供了不同选项让用户决定 ta 们喜欢的，具体如下</p><li>为日期时间的展示方式提供了两个选项，一个是具体的日期时间，如'2024-07-29 04:38:51'，另一个是距离现在的大致时间，如'2小时'。可以在设置中选择喜欢的显示方式。这两种方式都会在鼠标悬停提示中显示具体的创建和更新的日期时间。</Li><li>一篇笔记里可能有多条子项，为了查看方便，提供了展开/收缩所有子项目的按钮，同时，每条子项目均有独立的展开/收缩按钮。在设置中，可以依据习惯和喜好将笔记子项目设置为默认展开或默认收缩。</li><li>笔记子项目的排序方式有四个选项：更新日期时间降序或升序、创建日期时间降序或升序。在每篇笔记内容的顶部进行更改，也可以在设置中选择自己喜欢的顺序，这将成为默认的排序方式。</li><li>语言选项有：英文、简体中文、繁体中文，除了右上角的语言选择器，在设置中可以选择首选语言，一旦选择了首选语言，将隐藏右上角的语言选择器，使界面更整洁。</li><li>主题选项有：浅色、暗色、跟随系统，除了右上角的主题选择器，在设置中可以选择首选主题，一旦选择了首选主题，将隐藏右上角的主题选择器，使界面更整洁。</li>"
+      }
+    },
+    "cim": {
+      "name": "CIM 平台",
+      "summary": "<p>CIM（城市信息模型）平台是融合二三维空间信息、建筑信息模型、物联网感知信息，提供三维可视化表达、资源汇聚管理、审查与分析功能，提供模拟仿真能力的智慧城市信息平台，分为数据中心、全息城市、开发中心、运维管理四个应用。我在其中参与前端开发的工作。</p>",
+      "roles": {
+        "frontend": {
+          "name": "前端开发",
+          "detail": "<li>参与整体项目UI升级，数据中心60%、全息城市50%、开发中心80%、运维管理80%。</li><li>数据中心消息提醒功能，与后台websocket联调。</li><li>权限管理功能，完成运维管理中角色模块授权，在其他应用中根据权限控制可访问的路由或模块。</li><li>全息城市，空间分析模块集成和优化，完成时空数据对比、要素符号化等功能。</li><li>运维管理，完成服务聚合、资源审核功能开发。</li><li>开放平台，参与示例代码的编写。</li>"
+        }
+      },
+      "descriptions": {
+        "opening": "<p>CIM（城市信息模型）平台是融合二三维空间信息、建筑信息模型、物联网感知信息，提供三维可视化表达、资源汇聚管理、审查与分析功能，提供模拟仿真能力的智慧城市信息平台，分为数据中心、全息城市、开发中心、运维管理四个应用。我在其中参与前端开发的工作。</p>",
+        "stack": "<p>技术栈: <mark>React</mark> + <mark>Umi.js</mark> + <mark>ArcGIS JavaScript API</mark> + <mark>Ant-Design</mark> + <mark>Vue</mark> + <mark>element-ui</mark></p>"
+      }
+    },
+    "ydyl": {
+      "name": "一带一路科技创新平台",
+      "summary": "<p>一带一路科技创新平台包括全球尺度地图应用、国家尺度地图应用、科技要素展示应用、web 端运维管理、离线端运维管理。我在其中负责90%前端开发工作和部分数据处理工作。</p>",
+      "roles": {
+        "frontend": {
+          "name": "前端开发",
+          "detail": "<p class='text-tsecondary'>前端开发</p><li>负责全球尺度和国家尺度地图应用前端开发，包括地图渲染特效、后台接口对接、根据后台数据做统计、图表与地图联动、多年份国家排名变化连线等功能。</li><li>负责 60%科技创新要素应用的前端开发，根据客户的排版需求，将表结构的数据转换为章节形式的文章来展示。</li><li>负责 web 端和离线端运维管理的前端开发。</li>"
+        },
+        "data": {
+          "name": "数据处理",
+          "detail": "<p class='text-tsecondary'>数据处理</p><li>完成部分数据处理工作，包括用 python 进行数据清理和将 excel 表转换成 JSON 数据。</li>"
+        }
+      },
+      "descriptions": {
+        "stack": "<p>技术栈: <mark>React</mark> + <mark>Umi.js</mark> + <mark>ArcGIS JavaScript API</mark> + <mark>Echarts</mark> + <mark>Electron.js</mark> + <mark>Ant-Design</mark></p>",
+        "opening": "<p>一带一路科技创新平台包括全球尺度地图应用、国家尺度地图应用、科技要素展示应用、web 端运维管理、离线端运维管理。</p><li>全球尺度和国家尺度地图应用在时间、空间维度上的展示对比相关指标数据，将地图和 echarts 图表联动。</li><li>科技创新要素应用展示各国家基础库和扩展库的指标数据，将表结构的数据转换为章节形式的文章来展示，并满足不同排版样式（包括文本型、数值表格型、文本表格型等）的需求。</li><li>运维管理有 web 端和离线端。web 端运维管理包括基础库和扩展库指标数据、专利数据、论文数据、用户、角色等的管理。与科技创新要素应用相反，基础库和扩展库指标数据管理在章节式文章上操作来新增、更新、删除数据库中表格型数据。离线端是在 web 端代码的基础上借助 electron.js 实现。</li>"
+      }
+    },
+    "realscene": {
+      "name": "实景三维平台",
+      "summary": "<p>实景三维平台是一个提供实体目录展示、基于地理实体的多维查询、地理实体一码多态展示、地理实体知识图谱展示、地理场景展示、组装成果展示功能的系统。我在其中参与前端开发的工作。</p>",
+      "roles": {
+        "frontend": {
+          "name": "前端开发",
+          "detail": "<li>样式升级。</li><li>多维查询。</li><li>行政区定位。</li><li>二三维服务可视化配置。</li><li>对于限制下载文件大小的服务器，在请求模型文件失败的情况下，将模型文件压缩，在应用中使用 jszip 解压。</li><li>曲面长度计算。</li><li>权限管理。</li><li>多时空影像数据对比。</li><li>修复 bug。</li>"
+        }
+      },
+      "descriptions": {
+        "opening": "<p>实景三维平台是一个提供实体目录展示、基于地理实体的多维查询、地理实体一码多态展示、地理实体知识图谱展示、地理场景展示、组装成果展示功能的系统。我在其中参与前端开发的工作。<p>"
+      }
+    },
+    "geoscene": {
+      "name": "GeoScene 地图工具包",
+      "summary": "<p>GeoScene 地图工具包是一个提供地图相关功能的类库，目的是让客户借助这个工具包快速、简单地实现所需功能，包括二三维数据加载和渲染、绘制箭头、三维特效、空间分析等功能。地图工具包应用包括类库、API 文档、示例系统三部分，我在其中负责代码框架和 60%的前端开发。</p>",
+      "roles": {
+        "frontend": {
+          "name": "前端开发",
+          "detail": "<li>代码架构设计和实现思路。</li><li>60%的类库和示例代码页面开发。</li><li>示例代码页面设计和 API 文档设计。</li>"
+        }
+      },
+      "descriptions": {
+        "stack": "<mark>Vite</mark> + <mark>JSDoc</mark> + <mark>docdash</mark> + <mark>prettier-plugin-jsdoc</mark>",
+        "opening": "<p>GeoScene 地图工具包是一个提供地图相关功能的类库，目的是让客户借助这个工具包快速、简单地实现所需功能，包括二三维数据加载和渲染、绘制箭头、三维特效、空间分析等功能。地图工具包应用包括类库、API 文档、示例系统三部分，我在其中负责代码框架和 60%的前端开发。<p><p>客戶的要求是所有功能入口都在一个类，因此为了方便维护，将不同主题的功能写在一个类中，然后用 <mark>mixin 伪继承多个类</mark> 的方式最终通过一个类导出。</p><p>使用 <mark>vite</mark> 作为开发服务器和打包工具。</p><p>API 文档 采用 <mark>jsdoc</mark> 来生成 HTML 网站，直接由注释生成 API 文档，这样提高开发效率也方便修改。为了美观和方便阅读，使用了 <mark>docdash</mark> 作为 jsdoc 模版以及 <mark>prettier-plugin-jsdoc</mark> 来格式化注释。</p>"
+      }
+    }
+  },
+  "experiences": {
+    "header": {
+      "position": "职位",
+      "company": "公司",
+      "duration": "时间",
+      "description": "工作内容"
+    },
+
+    "geoscene": {
+      "position": "前端工程师",
+      "company": "易智瑞信息技术有限公司",
+      "duration": "2022.05-2024.03",
+      "description": "<li>前端开发，参与前端代码设计、开发和实现。</li><li>python 开发工作，包括 python 编写发布 ArcGIS 服务脚本，数据处理，编写简单接口。</li><li>系统部署和为客户提供技术支持。</li>"
+    },
+    "chengan": {
+      "position": "GIS工程师",
+      "company": "城安大数据有限公司",
+      "duration": "2021.07-2022.04",
+      "description": "<li>参与地图页面前端开发。</li><li>使用 Python 完成 ArcPy 二次开发和数据处理任务。</li><li>使用 SQL 语言完成数据清洗、处理、统计工作。</li><li>Linux 环境安装部署 ArcGIS Enterprise 产品。</li>"
+    }
+  },
+  "contact": "请与我联络"
 }

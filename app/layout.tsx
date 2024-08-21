@@ -1,7 +1,9 @@
+import { Suspense, lazy } from "react";
 import { twMerge } from "tailwind-merge";
 import "./globals.css";
 import "./i18n";
-import Main from "./main";
+import Loading from "./loading";
+const Main = lazy(() => import("./main"));
 export default function RootLayout({
   children,
 }: Readonly<{
@@ -10,7 +12,9 @@ export default function RootLayout({
   return (
     <html lang="en" suppressHydrationWarning>
       <body className={twMerge("pb-4")}>
-        <Main>{children}</Main>
+        <Suspense fallback={<Loading />}>
+          <Main>{children}</Main>
+        </Suspense>
       </body>
     </html>
   );

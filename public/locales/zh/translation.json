@@ -16,28 +16,28 @@
   "skills": {
     "heading": "skills",
     "react": {
-      "title": "熟悉 React 生态",
-      "detail": "<li>有两年 react 开发经验，使用 react 开发了地图可视化系统、后台管理系统、规划平台、教学系统等</li><li>熟练使用 react 以及相关库，包括 hooks、react-router、redux/toolkit 状态管理、react-i18next 国际化等。</li><li>有 nextjs 使用经验</li><li>了解 Vite 构建工具及配置</li><li>熟练使用 umijs 解决方案框架</>"
+      "title": "熟悉 React 生态，熟悉 hooks，有 next.js umi.js 使用经验。",
+      "detail": "<li>有两年 React 开发经验，使用 React 开发了后台管理系统、规划平台、教学系统、地图可视化系统等</li><li>熟练使用 React 以及相关库，包括 <mark>hooks</mark>、<mark>react-router</mark>、<mark>redux/toolkit</mark> 状态管理、<mark>react-i18next</mark> 国际化等。</li><li>有 <mark>next.js</mark> 使用经验</li><li>了解 <mark>Vite</mark> 构建工具及配置</li><li>熟练使用 <mark>umi.js</mark> 解决方案框架</>"
     },
     "django": {
-      "title": "了解 Django web 框架和 django-rest-framework",
-      "detail": ""
+      "title": "了解 Django web 框架和 django-rest-framework。",
+      "detail": "<li>了解 Django 开发 restful API 流程，熟悉 django-rest-framework。</li><li>熟悉常用第三方库，如 drf_yasg django_filters django-redis。</li><li>有结合 Google oauth2 的经验。</li><li>有自定义 django-rest-framework 序列化 mixin，permission 类，JSONRenderer 的经验。</li>"
     },
     "typescript": {
-      "title": "掌握 HTML CSS JavaScript typescript JSDoc",
-      "detail": ""
+      "title": "掌握 HTML CSS JavaScript TypeScript JSDoc。",
+      "detail": "<li>有丰富的纯 HMTL + CSS + JavaScript 网页开发经验。编写过上百个 html 示例代码。</li><li>熟悉 TypeScript，有四个 TypeScript 项目开发经验。</li><li>熟悉 JSDoc 注释写法和配置，有使用 JSDoc 编写向客户提供的 API 文档经验。</li>"
     },
     "database": {
-      "title": "接触 PostgreSQL 关系型数据库， mongodb redis noSQL 数据库，了解 SQL 语言",
-      "detail": ""
+      "title": "接触过 PostgreSQL 关系型数据库， MongoDB、redis 非关系型数据库，了解 SQL 语言。",
+      "detail": "<li>有 PostgreSQL、MongoDB、redis 使用经验。</li><li>了解 SQL 语言，有使用 SQL 进行数据清洗、处理、统计的经验。</li>"
     },
     "tailwindcss": {
-      "title": "熟悉 tailwindcss, 常用UI组件库 Ant-design shadcn/ui 的使用，了解响应式布局。",
-      "detail": ""
+      "title": "熟悉 tailwindcss、Ant-Design、shadcn/ui 的使用，了解响应式布局，有良好的设计思维。",
+      "detail": "<li>熟悉 tailwindcss 使用，了解配置和状态修饰符的使用。</li><li>熟悉 Ant-Design 有多个 Ant-Design 项目开发经验。</li><li>了解 shadcn/ui 的使用，与 ui 组件库不同的是，这是一个 ui 组件集合，通过 npx 命令将指定组件代码复制到工程中，可以直接修改代码以达到目标样式。</li><li>了解响应式布局，适配不同尺寸窗口。</li><li>有良好的设计思维，有完整的系统设计经验（包括功能和界面），能够达到用户体验友好，界面美观简洁。</li>"
     },
     "more": {
-      "title": "英语 CET-6，擅长观察和消化",
-      "detail": ""
+      "title": "英语 CET-6，擅长观察和思考。",
+      "detail": "<li>英语能力良好。</li><li>擅长观察和举一反三。</li><li>喜欢阅读。</li>"
     }
   },
   "projects": {
@@ -127,32 +127,12 @@
       "roles": {
         "frontend": {
           "name": "前端开发",
-          "detail": "完成前端开发所有内容"
+          "detail": "<li>代码架构设计和实现思路。</li><li>60%的类库和示例代码页面开发。</li><li>示例代码页面设计和 API 文档设计。</li>"
         }
       },
       "descriptions": {
-        "stack": "",
-        "opening": ""
-      }
-    },
-    "waste": {
-      "name": "厨余垃圾处理教学平台",
-      "summary": "",
-      "roles": {
-        "frontend": {
-          "name": "前端开发",
-          "detail": "完成前端开发所有内容"
-        },
-        "data": {
-          "name": "数据处理",
-          "detail": "负责数据整理、分析"
-        }
-      },
-      "descriptions": {
-        "opening": "",
-        "account": "",
-        "note": "",
-        "show": ""
+        "stack": "<mark>Vite</mark> + <mark>JSDoc</mark> + <mark>docdash</mark> + <mark>prettier-plugin-jsdoc</mark>",
+        "opening": "<p>GeoScene 地图工具包是一个提供地图相关功能的类库，目的是让客户借助这个工具包快速、简单地实现所需功能，包括二三维数据加载和渲染、绘制箭头、三维特效、空间分析等功能。地图工具包应用包括类库、API 文档、示例系统三部分，我在其中负责代码框架和 60%的前端开发。<p><p>客戶的要求是所有功能入口都在一个类，因此为了方便维护，将不同主题的功能写在一个类中，然后用 <mark>mixin 伪继承多个类</mark> 的方式最终通过一个类导出。</p><p>使用 <mark>vite</mark> 作为开发服务器和打包工具。</p><p>API 文档 采用 <mark>jsdoc</mark> 来生成 HTML 网站，直接由注释生成 API 文档，这样提高开发效率也方便修改。为了美观和方便阅读，使用了 <mark>docdash</mark> 作为 jsdoc 模版以及 <mark>prettier-plugin-jsdoc</mark> 来格式化注释。</p>"
       }
     }
   },
@@ -168,13 +148,13 @@
       "position": "前端工程师",
       "company": "易智瑞信息技术有限公司",
       "duration": "2022.05-2024.03",
-      "description": "<li>123dskfhiuweyrqpoweiugjdhgfsjhfguweyrtuwyertuw</li><li>123dskfhiuweyrqpoweiugjdhgfsjhfguweyrtuwyertuw</li>"
+      "description": "<li>前端开发，参与前端代码设计、开发和实现。</li><li>python 开发工作，包括 python 编写发布 ArcGIS 服务脚本，数据处理，编写简单接口。</li><li>系统部署和为客户提供技术支持。</li>"
     },
     "chengan": {
       "position": "GIS工程师",
       "company": "城安大数据有限公司",
       "duration": "2021.07-2022.04",
-      "description": "<li>123dskfhiuweyrqpoweiugjdhgfsjhfguweyrtuwyertuw</li><li>123dskfhiuweyrqpoweiugjdhgfsjhfguweyrtuwyertuw</li><li>123dskfhiuweyrqpoweiugjdhgfsjhfguweyrtuwyertuw</li>"
+      "description": "<li>参与地图页面前端开发。</li><li>使用 Python 完成 ArcPy 二次开发和数据处理任务。</li><li>使用 SQL 语言完成数据清洗、处理、统计工作。</li><li>Linux 环境安装部署 ArcGIS Enterprise 产品。</li>"
     }
   },
   "contact": "请与我联络"

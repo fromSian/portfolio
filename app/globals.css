@@ -64,8 +64,6 @@
   --image-dot: #5e6062;
   --image-dot-active: #b1bdbf;
 }
-@media (prefers-color-scheme: dark) {
-}
 
 body {
   color: rgb(var(--foreground-rgb));
