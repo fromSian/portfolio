@@ -4,7 +4,7 @@ const SelfIntroduction = () => {
   const { t } = useTranslation();
 
   return (
-    <div className="flex gap-2 sm:gap-4 p-2 sm:p-4 text-lg flex-col sm:flex-row items-center sm:items-start">
+    <div className="flex gap-2 sm:gap-4 p-2 sm:p-4 text-lg flex-col md:flex-row items-center md:items-start">
       <p className="text-3xl font-bold italic text-ttertiary text-nowrap">
         {t("position")}
       </p>
