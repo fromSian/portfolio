@@ -52,7 +52,7 @@ const VisibleWhenScrollAt = ({
     return () => {
       clearObserver();
     };
-  }, []);
+  }, [once, ratio]);
 
   return (
     <div className="flex items-stretch pr-4">

@@ -85,3 +85,5 @@ const Cards = forwardRef(({ total }: CardProps, ref) => {
 });
 
 export default Cards;
+
+Cards.displayName = "Cards";

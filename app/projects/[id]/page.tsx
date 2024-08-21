@@ -8,7 +8,7 @@ import { projectData, projectKeys } from "@/data/projects";
 import { notFound } from "next/navigation";
 import { useMemo } from "react";
 import { useTranslation } from "react-i18next";
-const page = ({ params }: { params: { id: string } }) => {
+const Page = ({ params }: { params: { id: string } }) => {
   const { id } = params || {};
   const data = useMemo(() => projectData.find((item) => item.key === id), [id]);
   // const restKeys = useMemo(
@@ -33,4 +33,4 @@ const page = ({ params }: { params: { id: string } }) => {
   );
 };
 
-export default page;
+export default Page;
