@@ -36,9 +36,6 @@ const VisibleWhenScrollAt = ({
 
     const callback = (entries: IntersectionObserverEntry[]) => {
       const [entry] = entries;
-      if (rootTargetHeightRatio < 1) {
-        console.log(entry);
-      }
       if (entry.isIntersecting) {
         setIsInView(true);
         if (once) {

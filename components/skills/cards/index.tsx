@@ -47,11 +47,18 @@ const Cards = forwardRef(({ total }: CardProps, ref) => {
   );
 
   useEffect(() => {
-    if (!parentRef.current) {
-      return;
-    }
-    setWidth(parentRef.current.clientWidth);
-    setHeight(parentRef.current.clientHeight);
+    const setSize = () => {
+      if (!parentRef.current) {
+        return;
+      }
+      setWidth(parentRef.current.clientWidth);
+      setHeight(parentRef.current.clientHeight);
+    };
+    setSize();
+    window.addEventListener("resize", setSize);
+    return () => {
+      window.removeEventListener("resize", setSize);
+    };
   }, [item]);
 
   return (

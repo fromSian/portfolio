@@ -156,7 +156,7 @@ const More = ({ keys }: MoreProps) => {
                   handleHover(index);
                 }}
                 className={twMerge(
-                  "absolute transition-all duration-300 border-black flex items-center justify-center p-4 overflow-hidden",
+                  "absolute transition-all duration-1000 border-black flex items-center justify-center p-4 overflow-hidden",
                   index < styleInfos.length - 1 ? "border-4" : "border-none",
                   "text-ttertiary hover:text-current cursor-pointer",
                   "break-all text-wrap"
