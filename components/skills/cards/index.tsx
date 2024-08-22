@@ -76,9 +76,11 @@ const Cards = forwardRef(({ total }: CardProps, ref) => {
           />
         )}
 
-        <div className={twMerge("absolute top-0 left-0 w-full h-full")}>
-          {isEraser && <Eraser width={width} height={height} />}
-        </div>
+        {isEraser && (
+          <div className={twMerge("absolute top-0 left-0 w-full h-full")}>
+            <Eraser width={width} height={height} />
+          </div>
+        )}
       </div>
     </>
   );
