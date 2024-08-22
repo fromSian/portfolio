@@ -29,7 +29,7 @@ export default function Home() {
 
       <VisibleWhenScrollAt
         Header={() => <MoveIn title={t("title.projects")} from="right" />}
-        ratio={0.5}
+        ratio={0.4}
         Content={({ isInView }) => (
           <Projects
             className={twMerge(
