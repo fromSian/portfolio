@@ -22,13 +22,21 @@ const InfoOnlyText = ({ project }: InfoOnlyTextProps) => {
             .join(" / ")}
         </p>
       </div>
+      <div className="flex-1">
+        <div
+          className="break-all text-ttertiary content"
+          dangerouslySetInnerHTML={{
+            __html: sanitize(t(`projects.${key}.summary`)),
+          }}
+        />
+        <div
+          className="break-all text-ttertiary content"
+          dangerouslySetInnerHTML={{
+            __html: sanitize(t(`projects.${key}.descriptions.stack`)),
+          }}
+        ></div>
+      </div>
 
-      <div
-        className="flex-1 break-all text-ttertiary content"
-        dangerouslySetInnerHTML={{
-          __html: sanitize(t(`projects.${key}.summary`)),
-        }}
-      />
       <div className="flex justify-center">
         <AnimatedLink
           className="cursor-pointer right-arrow "

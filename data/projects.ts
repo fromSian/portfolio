@@ -4,6 +4,7 @@ export const projectKeys = [
   "geoscene",
   "realscene",
   "ydyl",
+  "plan",
 ];
 
 export const projectData = [
@@ -31,6 +32,9 @@ export const projectData = [
       },
     ],
     descriptions: [
+      {
+        key: "stack",
+      },
       {
         key: "opening",
       },
@@ -108,6 +112,9 @@ export const projectData = [
     roles: ["frontend"],
     descriptions: [
       {
+        key: "stack",
+      },
+      {
         key: "opening",
       },
     ],
@@ -116,6 +123,21 @@ export const projectData = [
     key: "geoscene",
     roles: ["frontend"],
     descriptions: [
+      {
+        key: "stack",
+      },
+      {
+        key: "opening",
+      },
+    ],
+  },
+  {
+    key: "plan",
+    roles: ["frontend"],
+    descriptions: [
+      {
+        key: "stack",
+      },
       {
         key: "opening",
       },

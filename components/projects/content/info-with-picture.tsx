@@ -46,6 +46,12 @@ const InfoWithPicture = ({ project }: InfoInPictureProps) => {
           __html: sanitize(t(`projects.${key}.summary`)),
         }}
       ></div>
+      <div
+        className="break-all text-ttertiary flex flex-col gap-2 items-start w-full content"
+        dangerouslySetInnerHTML={{
+          __html: sanitize(t(`projects.${key}.descriptions.stack`)),
+        }}
+      ></div>
       <AnimatedLink
         className="cursor-pointer right-arrow block md:hidden"
         href={`/projects/${key}`}

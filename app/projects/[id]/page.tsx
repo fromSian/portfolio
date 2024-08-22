@@ -11,10 +11,10 @@ import { useTranslation } from "react-i18next";
 const Page = ({ params }: { params: { id: string } }) => {
   const { id } = params || {};
   const data = useMemo(() => projectData.find((item) => item.key === id), [id]);
-  // const restKeys = useMemo(
-  //   () => projectKeys.filter((item) => item !== id),
-  //   [id]
-  // );
+  const restKeys = useMemo(
+    () => projectKeys.filter((item) => item !== id),
+    [id]
+  );
   const { t } = useTranslation();
   return data ? (
     <div className="px-4">
@@ -26,7 +26,7 @@ const Page = ({ params }: { params: { id: string } }) => {
       </div>
 
       <Project data={data} />
-      <More keys={projectKeys} />
+      <More keys={restKeys} />
     </div>
   ) : (
     notFound()
