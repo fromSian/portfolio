@@ -1,4 +1,4 @@
-export const resume_url = "./liuxuan_resume.pdf";
+export const resume_url = "./resume-liuxuan.pdf";
 
 export const github_url = "https://github.com/fromSian";
 
