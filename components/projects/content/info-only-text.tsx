@@ -1,16 +1,14 @@
-import { useTranslation } from "react-i18next";
-
 import RightArrow from "@/components/icons/arrow-right";
 import Role from "@/components/icons/role";
 import AnimatedLink from "@/components/utils/animate-link";
-import { sanitize } from "dompurify";
-interface InfoOnlyTextProps {
-  project: ProjectItem;
-}
+import { useTranslation } from "@/i18n/server";
+import { Lng } from "@/types/global";
+import { sanitize } from "isomorphic-dompurify";
 
-const InfoOnlyText = ({ project }: InfoOnlyTextProps) => {
+const InfoOnlyText = async ({ project, lng }: ProjectProps & Lng) => {
   const { key, deployment, roles } = project;
-  const { t } = useTranslation();
+  const { t } = await useTranslation(lng);
+
   return (
     <div className="flex flex-col gap-2 basis-[100%] md:basis-[48%] rounded-sm border-2 p-4 border-ttertiary">
       <p className="text-left text-xl font-bold">{t(`projects.${key}.name`)}</p>

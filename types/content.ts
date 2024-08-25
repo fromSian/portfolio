@@ -58,3 +58,7 @@ type StyleInfo = {
   borderTop?: number;
   borderBottom?: number;
 };
+
+interface ProjectProps {
+  project: ProjectItem;
+}

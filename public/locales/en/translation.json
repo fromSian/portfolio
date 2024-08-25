@@ -10,13 +10,13 @@
   "dev": "dev.to",
   "not-found": "抱歉，这里没有内容",
   "home": "首页",
-  "name": "刘璇",
+  "name": "Soto Liu Xuan",
   "position": "前端 / 后端工程师",
-  "description": "<p>目前 25 岁，有 3 年前端开发工作经验，近 1 年后端开发经验。</p><p>在易智瑞公司担任两年开发工程师，期间参与实景三维平台、一带一路科技创新系统等项目的开发，工作职责包括 <mark>web 前端开发</mark>以及 <mark>python 开发</mark>。</p><p>熟悉 <mark>React</mark> 生态， 了解 <mark>Django、django-rest-framework</mark> 及常用第三方库， 能够独立完成前后端开发。</p><p>我希望学习和了解更多技术，累积更多经验。很期待完成有意义的工作。</p>",
+  "description": "<p>目前 25 岁，有 3 年前端开发工作经验，近 1 年后端开发经验。常用 React 开发前端，Django 开发后端。</p><p>在易智瑞公司担任两年开发工程师，期间参与实景三维平台、一带一路科技创新系统等项目的开发，工作职责包括 <mark>web 前端开发</mark>以及 <mark>python 开发</mark>。</p><p>熟悉 <mark>React</mark> 生态， 了解 <mark>Django、django-rest-framework</mark> 及常用第三方库， 能够独立完成前后端开发。</p><p>我希望学习和了解更多技术，累积更多经验。很期待完成有意义的工作。</p>",
   "skills": {
     "heading": "skills",
     "react": {
-      "title": "熟悉 React 生态，熟悉 hooks，有 next.js umi.js 使用经验。",
+      "title": "熟悉 React 生态，熟悉 hooks，有 next.js、umi.js 使用经验。",
       "detail": "<li>有两年 React 开发经验，使用 React 开发了后台管理系统、规划平台、教学系统、地图可视化系统等</li><li>熟练使用 React 以及相关库，包括 <mark>hooks</mark>、<mark>react-router</mark>、<mark>redux/toolkit</mark> 状态管理、<mark>react-i18next</mark> 国际化等。</li><li>有 <mark>next.js</mark> 使用经验</li><li>了解 <mark>Vite</mark> 构建工具及配置</li><li>熟练使用 <mark>umi.js</mark> 解决方案框架</>"
     },
     "django": {
@@ -70,7 +70,8 @@
         "backend": "GitHub 后端仓库"
       },
       "descriptions": {
-        "opening": "<li>前端技术栈为：<mark>vite</mark> + <mark>react</mark> + <mark>typescript</mark> + <mark>react-i18next</mark> + <mark>tailwindCSS</mark> + <mark>shadcn/ui</mark> + <mark>react-image-crop</mark> + <mark>zod</mark> + <mark>tiptap/editor</mark> + <mark>redux/toolkit</mark> + <mark>react-router</mark></li><li>后端技术栈为：<mark>django</mark> + <mark>django-rest-framework</mark> + <mark>google-auth-oauthlib</mark> + <mark>django-redis</mark> + <mark>DRF API Logger</mark> + <mark>markdownify</mark> + <mark>drf_yasg</mark> + <mark>django_filters</mark> + <mark>PostgreSQL</mark> + <mark>Redis</mark></li><p><mark>react-i18next</mark> 来实现国际化，应用支持英文、简体中文、繁体中文三种文字。<mark>shadcn/ui</mark> 是一个 UI 组件集合，通过执行<mark> npx add xx </mark>将 ui 组件代码复制到工程中，可以直接修改代码达到想要的样式。</p>",
+        "stack": "<p>前端技术栈为：<mark>vite</mark> + <mark>react</mark> + <mark>typescript</mark> + <mark>react-i18next</mark> + <mark>tailwindCSS</mark> + <mark>shadcn/ui</mark> + <mark>react-image-crop</mark> + <mark>zod</mark> + <mark>tiptap/editor</mark> + <mark>redux/toolkit</mark> + <mark>react-router</mark></p><p>后端技术栈为：<mark>django</mark> + <mark>django-rest-framework</mark> + <mark>google-auth-oauthlib</mark> + <mark>django-redis</mark> + <mark>DRF API Logger</mark> + <mark>markdownify</mark> + <mark>drf_yasg</mark> + <mark>django_filters</mark> + <mark>PostgreSQL</mark> + <mark>Redis</mark></p>",
+        "opening": "<p><mark>react-i18next</mark> 来实现国际化，应用支持英文、简体中文、繁体中文三种文字。<mark>shadcn/ui</mark> 是一个 UI 组件集合，通过执行<mark> npx add xx </mark>将 ui 组件代码复制到工程中，可以直接修改代码达到想要的样式。</p>",
         "account": "<p class='text-lg text-ttertiary'>提供多种用户认证方式，方便用户选择和试用，可以通过邮箱密码注册登录也可以通过谷歌账户登录，还提供了免注册试用一小时的功能。<p><li>邮箱密码注册设计思路为：输入邮箱 => 发送邮箱验证码 => 验证码通过 => 设定密码 => 注册成功。使用 django 的 email 模块通过 SMTP 主机和端口发送验证码邮件。将验证码存储在 redis 中以判断验证码是否有效，依据 redis 中的过期时间来限制一个邮箱地址一分钟内只能发送一次验证码。</li><li>通过谷歌登录借助了 google_auth_oauthlib 库生成 google authorization url 以及由 authorization response 得到token。前后端配合，后端编写 access 和 callback api，创建自定义的用户对象以及生成token，重定向至前端的谷歌登录结果页面；在前端，再次验证token是否有效。</li><li>设置免注册试用功能是由于我个人的经验，在寻找满足我需求的应用时，常常需要注册登录后才能它的功能是什么，如何操作的。然而，当我确认不再需要使用某个应用时，却很难找到如何注销账户。所以在这个应用中实现了免注册试用和注销账户的功能。</Li><li>考虑到使用中可能出现的需求，也实现了忘记密码模块的功能，更新密码功能。对于谷歌账户和试用账户，在登录期间，可以选择将账户转换为正式账户。</li>",
         "note": "<p class='text-lg text-ttertiary'>在设计和开发笔记内容部分时，我希望笔记编辑操作流畅简单、界面简洁友好。</p><li>笔记结构设计为一篇笔记中包括多个子项。如此，可将同一主题的内容记录在一篇笔记内的不同子项中，使它们属于同一篇笔记又相对独立，方便查看。</li><li>选择了 markdown 语法，markdown 语法被广泛使用，满足常用的文字排版需求。</li><li>为了操作更加简单流畅，没有采用编辑和预览状态分开的模式，而是使用 tiptap/editor 来实现输入 markdown 语言、展示 markdown 排版、编辑更新在同一个编辑器内完成，无需按钮或键盘事件来切换不同状态，也使界面更加简洁。同时，tiptap/editor 有丰富的 extension 来满足特定的样式/功能需求。</li>",
         "show": "<p class='text-lg text-ttertiary'>用户可以选择其偏好的展示方式。在使用某个应用时，会出现某个模块不想要看见，但是没有地方可以将其关闭的情况。基于这个想法，在展示上提供了不同选项让用户决定 ta 们喜欢的，具体如下</p><li>为日期时间的展示方式提供了两个选项，一个是具体的日期时间，如'2024-07-29 04:38:51'，另一个是距离现在的大致时间，如'2小时'。可以在设置中选择喜欢的显示方式。这两种方式都会在鼠标悬停提示中显示具体的创建和更新的日期时间。</Li><li>一篇笔记里可能有多条子项，为了查看方便，提供了展开/收缩所有子项目的按钮，同时，每条子项目均有独立的展开/收缩按钮。在设置中，可以依据习惯和喜好将笔记子项目设置为默认展开或默认收缩。</li><li>笔记子项目的排序方式有四个选项：更新日期时间降序或升序、创建日期时间降序或升序。在每篇笔记内容的顶部进行更改，也可以在设置中选择自己喜欢的顺序，这将成为默认的排序方式。</li><li>语言选项有：英文、简体中文、繁体中文，除了右上角的语言选择器，在设置中可以选择首选语言，一旦选择了首选语言，将隐藏右上角的语言选择器，使界面更整洁。</li><li>主题选项有：浅色、暗色、跟随系统，除了右上角的主题选择器，在设置中可以选择首选主题，一旦选择了首选主题，将隐藏右上角的主题选择器，使界面更整洁。</li>"
@@ -118,6 +119,7 @@
         }
       },
       "descriptions": {
+        "stack": "<p>技术栈: <mark>React</mark> + <mark>Umi.js</mark> + <mark>ArcGIS JavaScript API</mark> + <mark>Ant-Design</mark> + <mark>Vue</mark> + <mark>element-ui</mark></p>",
         "opening": "<p>实景三维平台是一个提供实体目录展示、基于地理实体的多维查询、地理实体一码多态展示、地理实体知识图谱展示、地理场景展示、组装成果展示功能的系统。我在其中参与前端开发的工作。<p>"
       }
     },
@@ -131,8 +133,22 @@
         }
       },
       "descriptions": {
-        "stack": "<mark>Vite</mark> + <mark>JSDoc</mark> + <mark>docdash</mark> + <mark>prettier-plugin-jsdoc</mark>",
+        "stack": "<p>技术栈：<mark>Vite</mark> + <mark>JavaScript</mark> + <mark>JSDoc</mark> + <mark>docdash</mark> + <mark>prettier-plugin-jsdoc</mark></p>",
         "opening": "<p>GeoScene 地图工具包是一个提供地图相关功能的类库，目的是让客户借助这个工具包快速、简单地实现所需功能，包括二三维数据加载和渲染、绘制箭头、三维特效、空间分析等功能。地图工具包应用包括类库、API 文档、示例系统三部分，我在其中负责代码框架和 60%的前端开发。<p><p>客戶的要求是所有功能入口都在一个类，因此为了方便维护，将不同主题的功能写在一个类中，然后用 <mark>mixin 伪继承多个类</mark> 的方式最终通过一个类导出。</p><p>使用 <mark>vite</mark> 作为开发服务器和打包工具。</p><p>API 文档 采用 <mark>jsdoc</mark> 来生成 HTML 网站，直接由注释生成 API 文档，这样提高开发效率也方便修改。为了美观和方便阅读，使用了 <mark>docdash</mark> 作为 jsdoc 模版以及 <mark>prettier-plugin-jsdoc</mark> 来格式化注释。</p>"
+      }
+    },
+    "plan": {
+      "name": "规划平台",
+      "summary": "<p>规划平台包括水库选址和风密度栅格图区域查询的功能，具体有库址、排查区域、工程占地要素的导入、绘制、导出、生成缓冲区和控制显隐等，以及要素列表与地图之间的联动，计算库址与排查区域、工程占地的重叠情况，并支持导出word文档。我在其中负责前端开发的工作内容。</p>",
+      "roles": {
+        "frontend": {
+          "name": "前端开发",
+          "detail": "<li>shp、dxf、geojson等格式数据导入</li><li>地图要素绘制、高亮、生成缓冲区功能</li><li>计算重叠情况，地图要素颜色随之变化，导出word报告</li>"
+        }
+      },
+      "descriptions": {
+        "stack": "<p>技术栈：<mark>React</mark> + <mark>Umi.js</mark> + <mark>TypeScript</mark> + <mark>Ant-Design</mark> + <mark>ArcGIS JavaScript API</mark> + <mark>dva</mark> + <mark>docxtemplater</mark></p>",
+        "opening": "<p>规划平台包括水库选址和风密度栅格图区域查询的功能，具体有库址、排查区域、工程占地要素的导入、绘制、导出、生成缓冲区和控制显隐等，以及要素列表与地图之间的联动，计算库址与排查区域、工程占地的重叠情况，并支持导出word文档。我在其中负责前端开发的工作内容。</p>"
       }
     }
   },

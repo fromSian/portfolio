@@ -1,3 +1,4 @@
+"use client";
 import BeautyImage from "@/components/utils/image";
 import { useState } from "react";
 

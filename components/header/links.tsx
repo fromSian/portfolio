@@ -1,19 +1,23 @@
 "use client";
 
 import { dev_url, email_url, github_url, resume_url } from "@/common/links";
+import { Lng } from "@/types/global";
 import { useTheme } from "next-themes";
-import { useCallback, useRef } from "react";
+import { useRouter } from "next/navigation";
+import { useCallback, useEffect, useRef, useState } from "react";
 import { useTranslation } from "react-i18next";
 import { twMerge } from "tailwind-merge";
 import Dev from "../icons/links/dev";
 import Email from "../icons/links/email";
 import GitHubIcon from "../icons/links/github";
+import LanguageIcon from "../icons/links/language-icon";
 import Resume from "../icons/links/resume";
 import LightIcon from "../icons/theme/light";
 
 type Cls = {
   className?: string;
 };
+
 type Theme = {
   theme?: ThemeStatus;
 };
@@ -56,21 +60,22 @@ interface LinksProps {
 const Links = ({
   isStickyTop,
   isBottom = false,
+  lng,
   className = "",
-}: LinksProps) => {
-  const { t, i18n } = useTranslation();
+}: LinksProps & Lng) => {
+  const { t, i18n } = useTranslation(lng);
   const { theme, setTheme } = useTheme();
   const timeRef = useRef<ReturnType<typeof setTimeout>>();
-
+  const router = useRouter();
   const handleLanguageChange = () => {
     if (timeRef.current) {
       clearTimeout(timeRef.current);
       timeRef.current = undefined;
     }
     timeRef.current = setTimeout(() => {
-      i18n.changeLanguage(
-        i18n.resolvedLanguage?.startsWith("en") ? "zh" : "en"
-      );
+      i18n.resolvedLanguage?.startsWith("en")
+        ? router.push("/zh")
+        : router.push("/en");
     }, 100);
   };
 
@@ -82,6 +87,11 @@ const Links = ({
     window.open(url);
   };
 
+  const [isMount, setIsMount] = useState(false);
+  useEffect(() => {
+    setIsMount(true);
+  }, []);
+  if (!isMount) return null;
   return (
     <div className={twMerge("flex gap-2 items-center", className)}>
       <IconWrap
@@ -119,13 +129,13 @@ const Links = ({
       />
       {!isBottom && (
         <>
-          {/* <IconWrap
+          <IconWrap
             onClick={handleLanguageChange}
             isStickyTop={isStickyTop}
             Icon={LanguageIcon}
             tooltip={i18n.resolvedLanguage}
             isBottom={isBottom}
-          /> */}
+          />
           <IconWrap
             isStickyTop={isStickyTop}
             Icon={LightIcon}

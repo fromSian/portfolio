@@ -2,16 +2,13 @@ import RightArrow from "@/components/icons/arrow-right";
 import Role from "@/components/icons/role";
 import AnimatedLink from "@/components/utils/animate-link";
 import UnderlineLink from "@/components/utils/underline-link";
-import { sanitize } from "dompurify";
-import { useTranslation } from "react-i18next";
+import { useTranslation } from "@/i18n/server";
+import { Lng } from "@/types/global";
+import { sanitize } from "isomorphic-dompurify";
 
-interface InfoInPictureProps {
-  project: ProjectItem;
-}
-
-const InfoWithPicture = ({ project }: InfoInPictureProps) => {
+const InfoWithPicture = async ({ project, lng }: ProjectProps & Lng) => {
   const { key, deployment, roles } = project;
-  const { t } = useTranslation();
+  const { t } = await useTranslation(lng);
   return (
     <div className="flex flex-col gap-2 w-full justify-between items-center px-4 sm:px-8">
       <div className="flex flex-col md:flex-row gap-2 md:gap-8 items-center">

@@ -1,5 +1,5 @@
 import Number from "@/components/icons/number";
-import { sanitize } from "dompurify";
+import { sanitize } from "isomorphic-dompurify";
 
 interface ResponsibilityItemProps {
   index: number;

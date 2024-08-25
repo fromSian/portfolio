@@ -1,13 +1,14 @@
 "use client";
+import { useTranslation } from "@/i18n/client";
+import { Lng } from "@/types/global";
 import { useEffect, useRef, useState } from "react";
-import { useTranslation } from "react-i18next";
 import { Tooltip } from "react-tooltip";
 import { twMerge } from "tailwind-merge";
 import Links from "./links";
 import NamePosition from "./name-position";
 
-const Header = () => {
-  const { t } = useTranslation();
+const Header = ({ lng }: Lng) => {
+  const { t } = useTranslation(lng);
   const topLineRef = useRef<HTMLDivElement>(null);
   const observeRef = useRef<IntersectionObserver>();
   const [isStickyTop, setStickyTop] = useState(false);
@@ -46,6 +47,12 @@ const Header = () => {
       observeRef.current = undefined;
     };
   }, []);
+
+  const [isMount, setIsMount] = useState(false);
+  useEffect(() => {
+    setIsMount(true);
+  }, []);
+  if (!isMount) return null;
   return (
     <>
       <div className="h-4 invisible" ref={topLineRef}></div>
@@ -62,7 +69,11 @@ const Header = () => {
           position={t("position")}
         />
 
-        <Links isStickyTop={isStickyTop} className="justify-end w-full" />
+        <Links
+          isStickyTop={isStickyTop}
+          className="justify-end w-full"
+          lng={lng}
+        />
       </header>
 
       <Tooltip id="my-tooltip" className="z-20" />

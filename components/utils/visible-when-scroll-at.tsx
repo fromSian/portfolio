@@ -1,8 +1,10 @@
+"use client";
 import { ReactNode, useEffect, useRef, useState } from "react";
+import { twMerge } from "tailwind-merge";
 interface VisibleWhenScrollAtProps {
   ratio?: number;
-  Header?: () => ReactNode;
-  Content?: ({ isInView }: { isInView: boolean }) => ReactNode;
+  Header?: ReactNode;
+  Content?: ReactNode;
   once?: boolean;
 }
 const VisibleWhenScrollAt = ({
@@ -15,18 +17,24 @@ const VisibleWhenScrollAt = ({
   const observeRef = useRef<IntersectionObserver>();
   const [isInView, setIsInView] = useState(false);
   const initialRatioRef = useRef(0);
+  const [isMount, setIsMount] = useState(false);
 
   const clearObserver = () => {
     topLineRef.current && observeRef.current?.unobserve(topLineRef.current);
     observeRef.current?.disconnect();
     observeRef.current = undefined;
   };
+  useEffect(() => {
+    setIsMount(true);
+  }, []);
 
   useEffect(() => {
     if (!topLineRef.current) return;
+    if (!isMount) return;
     const rootTargetHeightRatio = +(
       window.innerHeight / topLineRef.current.clientHeight
     ).toFixed(6);
+
     const options = {
       root: null,
       rootMargin: "",
@@ -52,7 +60,9 @@ const VisibleWhenScrollAt = ({
     return () => {
       clearObserver();
     };
-  }, [once, ratio]);
+  }, [once, ratio, isMount]);
+
+  if (!isMount) return null;
 
   return (
     <div className="flex items-stretch pr-4">
@@ -61,9 +71,16 @@ const VisibleWhenScrollAt = ({
         className="w-2 sm:w-4 bg-blue-500 flex-shrink-0 invisible"
       ></div>
       <div className="flex-auto relative">
-        {Header && isInView && <Header />}
+        {Header && isInView ? Header : ""}
 
-        {Content && <Content isInView={isInView} />}
+        <div
+          className={twMerge(
+            "mb-8",
+            isInView ? "animate-show-out" : "opacity-0"
+          )}
+        >
+          {Content}
+        </div>
       </div>
     </div>
   );

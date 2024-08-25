@@ -1,13 +1,15 @@
+"use client";
 import { skillKeys } from "@/data/skills";
+import { Lng } from "@/types/global";
 import { useEffect, useRef, useState } from "react";
 import { twMerge } from "tailwind-merge";
 import Cards from "./cards";
 import List from "./list";
 interface SkillProps {
-  className: string;
+  className?: string;
 }
 
-const Skills = ({ className = "" }: SkillProps) => {
+const Skills = ({ className = "", lng }: SkillProps & Lng) => {
   const [activeKey, setActiveKey] = useState("");
   const [data, setData] = useState<SkillItem[]>([]);
   const cardsRef = useRef<CardsProps>();

@@ -1,3 +1,4 @@
+import { Lng } from "@/types/global";
 import { twMerge } from "tailwind-merge";
 import Links from "./links";
 import MediaWithPara from "./media-with-para";
@@ -6,7 +7,7 @@ import Responsibility from "./responsibility";
 interface ProjectProps {
   data: ProjectItem;
 }
-const Project = ({ data }: ProjectProps) => {
+const Project = ({ data, lng }: ProjectProps & Lng) => {
   return (
     <div className="px-4">
       {data.descriptions?.length && (
@@ -17,6 +18,7 @@ const Project = ({ data }: ProjectProps) => {
               desc={desc}
               dataKey={data.key}
               key={`project-${index}`}
+              lng={lng}
             />
           ))}
         </div>
@@ -31,9 +33,10 @@ const Project = ({ data }: ProjectProps) => {
           roles={data.roles}
           dataKey={data.key}
           isHideNumber={!data.image}
+          lng={lng}
         />
         {data.links && data.links.length && (
-          <Links dataKey={data.key} links={data.links} />
+          <Links dataKey={data.key} links={data.links} lng={lng} />
         )}
       </div>
     </div>

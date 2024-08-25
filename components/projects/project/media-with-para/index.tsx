@@ -1,5 +1,6 @@
-import { sanitize } from "dompurify";
-import { useTranslation } from "react-i18next";
+import { useTranslation } from "@/i18n/server";
+import { Lng } from "@/types/global";
+import { sanitize } from "isomorphic-dompurify";
 import MediaMulti from "../media/multi";
 import MediaOne from "../media/one";
 
@@ -9,12 +10,13 @@ interface MediaWithParaProps {
   direction?: "right" | "left";
 }
 
-const MediaWithPara = ({
+const MediaWithPara = async ({
   dataKey,
   desc,
+  lng,
   direction = "right",
-}: MediaWithParaProps) => {
-  const { t } = useTranslation();
+}: MediaWithParaProps & Lng) => {
+  const { t } = await useTranslation(lng);
   return (
     <div className="clear-both">
       {desc.medias?.length &&

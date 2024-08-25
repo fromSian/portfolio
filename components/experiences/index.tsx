@@ -1,6 +1,5 @@
-"use client";
-
-import { useTranslation } from "react-i18next";
+import { useTranslation } from "@/i18n/server";
+import { Lng } from "@/types/global";
 import { twMerge } from "tailwind-merge";
 
 const headers = ["position", "company", "duration", "description"];
@@ -9,8 +8,8 @@ interface ProjectsProps {
   className?: string;
 }
 
-const Experiences = ({ className = "" }: ProjectsProps) => {
-  const { t } = useTranslation();
+const Experiences = async ({ lng, className = "" }: ProjectsProps & Lng) => {
+  const { t } = await useTranslation(lng);
   return (
     <>
       <div

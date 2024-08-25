@@ -1,5 +1,5 @@
 import Number from "@/components/icons/number";
-import { sanitize } from "dompurify";
+import { sanitize } from "isomorphic-dompurify";
 import { useTranslation } from "react-i18next";
 import { twMerge } from "tailwind-merge";
 interface CardProps {

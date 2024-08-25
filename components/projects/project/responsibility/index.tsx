@@ -1,4 +1,5 @@
-import { useTranslation } from "react-i18next";
+import { useTranslation } from "@/i18n/server";
+import { Lng } from "@/types/global";
 import ResponsibilityItem from "./item";
 
 interface ResponsibilityProps {
@@ -7,12 +8,13 @@ interface ResponsibilityProps {
   isHideNumber?: boolean;
 }
 
-const Responsibility = ({
+const Responsibility = async ({
   roles,
   dataKey,
+  lng,
   isHideNumber = false,
-}: ResponsibilityProps) => {
-  const { t } = useTranslation();
+}: ResponsibilityProps & Lng) => {
+  const { t } = await useTranslation(lng);
   return (
     <>
       <div className="flex flex-col gap-4 flex-1">

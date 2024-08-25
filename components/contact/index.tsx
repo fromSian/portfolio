@@ -1,9 +1,10 @@
 import { email_url } from "@/common/links";
-import { useTranslation } from "react-i18next";
+import { useTranslation } from "@/i18n/server";
+import { Lng } from "@/types/global";
 import Links from "../header/links";
 
-const Contact = () => {
-  const { t } = useTranslation();
+const Contact = async ({ lng }: Lng) => {
+  const { t } = await useTranslation(lng);
   return (
     <div className="px-4 flex flex-col items-center gap-4 relative">
       <a
@@ -12,7 +13,7 @@ const Contact = () => {
       >
         {t("contact")}
       </a>
-      <Links isStickyTop={true} isBottom={true} />
+      <Links isStickyTop={true} isBottom={true} lng={lng} />
     </div>
   );
 };
